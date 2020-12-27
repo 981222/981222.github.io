@@ -1,0 +1,515 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/about/avatar.png">
+  <link rel="icon" type="image/png" href="/img/about/avatar.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>Java容器 - 松林</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>松林</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                档案
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/navbar/main.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="你的高明之处不在于谈论你自己，而在于倾听别人谈论他们自己。">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-12-27 16:57" pubdate>
+        2020年12月27日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.6k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      17
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">你的高明之处不在于谈论你自己，而在于倾听别人谈论他们自己。</h1>
+            
+            <div class="markdown-body">
+              <h2 id="1-java容器都有哪些？"><a href="#1-java容器都有哪些？" class="headerlink" title="1.java容器都有哪些？"></a>1.java容器都有哪些？</h2><p>常用容器的图录：</p>
+<p><img src="/img/posts/java/Java_Container.png" srcset="/img/loading.gif" title="Java容器图录"></p>
+<h2 id="2-Collection-和-Collections-有什么区别？"><a href="#2-Collection-和-Collections-有什么区别？" class="headerlink" title="2.Collection 和 Collections 有什么区别？"></a>2.Collection 和 Collections 有什么区别？</h2><ul>
+<li><p>java.util.Collection 是一个集合接口（集合类的一个顶级接口）。它提供了对集合对象进行基本操作的通用接口方法。Collection接口在Java 类库中有很多具体的实现。Collection接口的意义是为各种具体的集合提供了最大化的统一操作方式，其直接继承接口有List与Set。</p>
+</li>
+<li><p>Collections则是集合类的一个工具类/帮助类，其中提供了一系列静态方法，用于对集合中元素进行排序、搜索以及线程安全等各种操作。</p>
+</li>
+</ul>
+<h2 id="3-List、Set、Map-之间的区别是什么？"><a href="#3-List、Set、Map-之间的区别是什么？" class="headerlink" title="3.List、Set、Map 之间的区别是什么？"></a>3.List、Set、Map 之间的区别是什么？</h2><p><img src="/img/posts/java/List_Set_Map.png" srcset="/img/loading.gif" title="List、Set、Map之间的区别"></p>
+<h2 id="4-HashMap-和-Hashtable-有什么区别？"><a href="#4-HashMap-和-Hashtable-有什么区别？" class="headerlink" title="4.HashMap 和 Hashtable 有什么区别？"></a>4.HashMap 和 Hashtable 有什么区别？</h2><ul>
+<li><p>hashMap去掉了HashTable 的contains方法，但是加上了containsValue（）和containsKey（）方法。</p>
+</li>
+<li><p>hashTable同步的，而HashMap是非同步的，效率上比hashTable要高。</p>
+</li>
+<li><p>hashMap允许空键值，而hashTable不允许。</p>
+</li>
+</ul>
+<h2 id="5-如何决定使用-HashMap-还是-TreeMap？"><a href="#5-如何决定使用-HashMap-还是-TreeMap？" class="headerlink" title="5.如何决定使用 HashMap 还是 TreeMap？"></a>5.如何决定使用 HashMap 还是 TreeMap？</h2><ul>
+<li><p>TreeMap&lt;K,V&gt;的Key值是要求实现java.lang.Comparable，所以迭代的时候TreeMap默认是按照Key值升序排序的；TreeMap的实现是基于红黑树结构。适用于按自然顺序或自定义顺序遍历键（key）。</p>
+</li>
+<li><p>HashMap&lt;K,V&gt;的Key值实现散列hashCode()，分布是散列的、均匀的，不支持排序；数据结构主要是桶(数组)，链表或红黑树。适用于在Map中插入、删除和定位元素。</p>
+</li>
+</ul>
+<p>如果你需要得到一个有序的结果时就应该使用TreeMap（因为HashMap中元素的排列顺序是不固定的）。除此之外，由于HashMap有更好的性能，所以大多不需要排序的时候我们会使用HashMap。</p>
+<h2 id="6-说一下-HashMap-的实现原理？"><a href="#6-说一下-HashMap-的实现原理？" class="headerlink" title="6.说一下 HashMap 的实现原理？"></a>6.说一下 HashMap 的实现原理？</h2><p>HashMap概述：HashMap是基于哈希表的Map接口的非同步实现。此实现提供所有可选的映射操作，并允许使用null值和null键。此类不保证映射的顺序，特别是它不保证该顺序恒久不变。 </p>
+<p>HashMap的数据结构：在java编程语言中，最基本的结构就是两种，一个是数组，另外一个是模拟指针（引用），所有的数据结构都可以用这两个基本结构来构造的，HashMap也不例外。HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。</p>
+<p>当我们往Hashmap中put元素时，首先根据key的hashcode重新计算hash值，根绝hash值得到这个元素在数组中的位置(下标)，如果该数组在该位置上已经存放了其他元素，那么在这个位置上的元素将以链表的形式存放，新加入的放在链头，最先加入的放入链尾。如果数组中该位置没有元素，就直接将该元素放到数组的该位置上。</p>
+<p>需要注意 JDK 1.8 中对HashMap的实现做了优化，当链表中的节点数据超过八个之后，该链表会转为红黑树来提高查询效率，从原来的O(n)到O(logn)</p>
+<h2 id="7-说一下-HashSet-的实现原理？"><a href="#7-说一下-HashSet-的实现原理？" class="headerlink" title="7.说一下 HashSet 的实现原理？"></a>7.说一下 HashSet 的实现原理？</h2><ul>
+<li><p>HashSet底层由HashMap实现。</p>
+</li>
+<li><p>HashSet的值存放于HashMap的key上。</p>
+</li>
+<li><p>HashMap的value统一为PRESENT。</p>
+</li>
+</ul>
+<h2 id="8-ArrayList-和-LinkedList-的区别是什么？"><a href="#8-ArrayList-和-LinkedList-的区别是什么？" class="headerlink" title="8.ArrayList 和 LinkedList 的区别是什么？"></a>8.ArrayList 和 LinkedList 的区别是什么？</h2><p>最明显的区别是 ArrrayList底层的数据结构是数组，支持随机访问，而 LinkedList 的底层数据结构是双向循环链表，不支持随机访问。使用下标访问一个元素，ArrayList 的时间复杂度是 O(1)，而 LinkedList 是 O(n)。</p>
+<h2 id="9-如何实现数组和-List-之间的转换？"><a href="#9-如何实现数组和-List-之间的转换？" class="headerlink" title="9.如何实现数组和 List 之间的转换？"></a>9.如何实现数组和 List 之间的转换？</h2><ul>
+<li><p>List转换成为数组：调用ArrayList的toArray方法。</p>
+</li>
+<li><p>数组转换成为List：调用Arrays的asList方法。</p>
+</li>
+</ul>
+<h2 id="10-ArrayList-和-Vector-的区别是什么？"><a href="#10-ArrayList-和-Vector-的区别是什么？" class="headerlink" title="10.ArrayList 和 Vector 的区别是什么？"></a>10.ArrayList 和 Vector 的区别是什么？</h2><ul>
+<li><p>Vector是同步的，而ArrayList不是。然而，如果你寻求在迭代的时候对列表进行改变，你应该使用CopyOnWriteArrayList。 </p>
+</li>
+<li><p>ArrayList比Vector快，它因为有同步，不会过载。 </p>
+</li>
+<li><p>ArrayList更加通用，因为我们可以使用Collections工具类轻易地获取同步列表和只读列表。</p>
+</li>
+</ul>
+<h2 id="11-Array-和-ArrayList-有何区别？"><a href="#11-Array-和-ArrayList-有何区别？" class="headerlink" title="11.Array 和 ArrayList 有何区别？"></a>11.Array 和 ArrayList 有何区别？</h2><ul>
+<li><p>Array可以容纳基本类型和对象，而ArrayList只能容纳对象。 </p>
+</li>
+<li><p>Array是指定大小后不可变的，而ArrayList大小是可变的。 </p>
+</li>
+<li><p>Array没有提供ArrayList那么多功能，比如addAll、removeAll和iterator等。</p>
+</li>
+</ul>
+<h2 id="12-在-Queue-中-poll-和-remove-有什么区别？"><a href="#12-在-Queue-中-poll-和-remove-有什么区别？" class="headerlink" title="12.在 Queue 中 poll()和 remove()有什么区别？"></a>12.在 Queue 中 poll()和 remove()有什么区别？</h2><p>poll() 和 remove() 都是从队列中取出一个元素，但是 poll() 在获取元素失败的时候会返回空，但是 remove() 失败的时候会抛出异常。</p>
+<h2 id="13-哪些集合类是线程安全的？"><a href="#13-哪些集合类是线程安全的？" class="headerlink" title="13.哪些集合类是线程安全的？"></a>13.哪些集合类是线程安全的？</h2><ul>
+<li><p>vector：就比arraylist多了个同步化机制（线程安全），因为效率较低，现在已经不太建议使用。在web应用中，特别是前台页面，往往效率（页面响应速度）是优先考虑的。</p>
+</li>
+<li><p>statck：堆栈类，先进后出。</p>
+</li>
+<li><p>hashtable：就比hashmap多了个线程安全。</p>
+</li>
+<li><p>enumeration：枚举，相当于迭代器。</p>
+</li>
+</ul>
+<h2 id="14-迭代器-Iterator-是什么？"><a href="#14-迭代器-Iterator-是什么？" class="headerlink" title="14.迭代器 Iterator 是什么？"></a>14.迭代器 Iterator 是什么？</h2><p>迭代器是一种设计模式，它是一个对象，它可以遍历并选择序列中的对象，而开发人员不需要了解该序列的底层结构。迭代器通常被称为“轻量级”对象，因为创建它的代价小。</p>
+<h2 id="15-Iterator-怎么使用？有什么特点？"><a href="#15-Iterator-怎么使用？有什么特点？" class="headerlink" title="15.Iterator 怎么使用？有什么特点？"></a>15.Iterator 怎么使用？有什么特点？</h2><p>Java中的Iterator功能比较简单，并且只能单向移动：</p>
+<ol>
+<li><p>使用方法iterator()要求容器返回一个Iterator。第一次调用Iterator的next()方法时，它返回序列的第一个元素。注意：iterator()方法是java.lang.Iterable接口,被Collection继承。</p>
+</li>
+<li><p>使用next()获得序列中的下一个元素。</p>
+</li>
+<li><p>使用hasNext()检查序列中是否还有元素。</p>
+</li>
+<li><p>使用remove()将迭代器新返回的元素删除。　</p>
+</li>
+</ol>
+<p>Iterator是Java迭代器最简单的实现，为List设计的ListIterator具有更多的功能，它可以从两个方向遍历List，也可以从List中插入和删除元素。</p>
+<h2 id="16-Iterator-和-ListIterator-有什么区别？"><a href="#16-Iterator-和-ListIterator-有什么区别？" class="headerlink" title="16.Iterator 和 ListIterator 有什么区别？"></a>16.Iterator 和 ListIterator 有什么区别？</h2><ul>
+<li><p>Iterator可用来遍历Set和List集合，但是ListIterator只能用来遍历List。 </p>
+</li>
+<li><p>Iterator对集合只能是前向遍历，ListIterator既可以前向也可以后向。 </p>
+</li>
+<li><p>ListIterator实现了Iterator接口，并包含其他的功能，比如：增加元素，替换元素，获取前一个和后一个元素的索引，等等。</p>
+</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%AE%B9%E5%99%A8/">容器</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/12/27/office/Java%E5%9F%BA%E7%A1%80/">
+                        <span class="hidden-mobile">Java基础</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
