@@ -1,0 +1,470 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/about/avatar.png">
+  <link rel="icon" type="image/png" href="/img/about/avatar.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>享元模式 - 松林</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>松林</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                档案
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/navbar/post.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="乞丐并不会妒忌百万富翁，但是他肯定会妒忌收入更高的乞丐。">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-01-06 17:35" pubdate>
+        2021年1月6日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      17
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">乞丐并不会妒忌百万富翁，但是他肯定会妒忌收入更高的乞丐。</h1>
+            
+            <div class="markdown-body">
+              <h1 id="享元模式"><a href="#享元模式" class="headerlink" title="享元模式"></a>享元模式</h1><p>享元模式（Flyweight Pattern）主要用于减少创建对象的数量，以减少内存占用和提高性能。这种类型的设计模式属于结构型模式，它提供了减少对象数量从而改善应用所需的对象结构的方式。</p>
+<p>享元模式尝试重用现有的同类对象，如果未找到匹配的对象，则创建新对象。我们将通过创建 5 个对象来画出 20 个分布于不同位置的圆来演示这种模式。由于只有 5 种可用的颜色，所以 color 属性被用来检查现有的 Circle 对象。</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><strong>意图：</strong>运用共享技术有效地支持大量细粒度的对象。</p>
+<p><strong>主要解决：</strong>在有大量对象时，有可能会造成内存溢出，我们把其中共同的部分抽象出来，如果有相同的业务请求，直接返回在内存中已有的对象，避免重新创建。</p>
+<p><strong>何时使用：</strong> </p>
+<ul>
+<li>系统中有大量对象。 </li>
+<li>这些对象消耗大量内存。 </li>
+<li>这些对象的状态大部分可以外部化。 </li>
+<li>这些对象可以按照内蕴状态分为很多组，当把外蕴对象从对象中剔除出来时，每一组对象都可以用一个对象来代替。 </li>
+<li>系统不依赖于这些对象身份，这些对象是不可分辨的。</li>
+</ul>
+<p><strong>如何解决：</strong>用唯一标识码判断，如果在内存中有，则返回这个唯一标识码所标识的对象。</p>
+<p><strong>关键代码：</strong>用 HashMap 存储这些对象。</p>
+<p><strong>应用实例：</strong> </p>
+<ul>
+<li>JAVA 中的 String，如果有则返回，如果没有则创建一个字符串保存在字符串缓存池里面。</li>
+<li>数据库的数据池。</li>
+</ul>
+<p><strong>优点：</strong>大大减少对象的创建，降低系统的内存，使效率提高。</p>
+<p><strong>缺点：</strong>提高了系统的复杂度，需要分离出外部状态和内部状态，而且外部状态具有固有化的性质，不应该随着内部状态的变化而变化，否则会造成系统的混乱。</p>
+<p><strong>使用场景：</strong> </p>
+<ul>
+<li>系统有大量相似对象。 </li>
+<li>需要缓冲池的场景。</li>
+</ul>
+<p><strong>注意事项：</strong> </p>
+<ul>
+<li>注意划分外部状态和内部状态，否则可能会引起线程安全问题。 </li>
+<li>这些类必须有一个工厂对象加以控制。</li>
+</ul>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>我们将创建一个 Shape 接口和实现了 Shape 接口的实体类 Circle。下一步是定义工厂类 ShapeFactory。</p>
+<p>ShapeFactory 有一个 Circle 的 HashMap，其中键名为 Circle 对象的颜色。无论何时接收到请求，都会创建一个特定颜色的圆。ShapeFactory 检查它的 HashMap 中的 circle 对象，如果找到 Circle 对象，则返回该对象，否则将创建一个存储在 hashmap 中以备后续使用的新对象，并把该对象返回到客户端。</p>
+<p>FlyWeightPatternDemo 类使用 ShapeFactory 来获取 Shape 对象。它将向 ShapeFactory 传递信息（red / green / blue/ black / white），以便获取它所需对象的颜色。</p>
+<p><img src="/img/posts/java/design_patterns/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F.jpg" srcset="/img/loading.gif" title="享元模式"></p>
+<h3 id="步骤-1"><a href="#步骤-1" class="headerlink" title="步骤 1"></a>步骤 1</h3><p>创建一个接口。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Shape</span> </span>&#123;<br>   <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">draw</span><span class="hljs-params">()</span></span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="步骤-2"><a href="#步骤-2" class="headerlink" title="步骤 2"></a>步骤 2</h3><p>创建实现接口的实体类。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Circle</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Shape</span> </span>&#123;<br>   <span class="hljs-keyword">private</span> String color;<br>   <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> x;<br>   <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> y;<br>   <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> radius;<br> <br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Circle</span><span class="hljs-params">(String color)</span></span>&#123;<br>      <span class="hljs-keyword">this</span>.color = color;     <br>   &#125;<br> <br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setX</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>      <span class="hljs-keyword">this</span>.x = x;<br>   &#125;<br> <br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setY</span><span class="hljs-params">(<span class="hljs-keyword">int</span> y)</span> </span>&#123;<br>      <span class="hljs-keyword">this</span>.y = y;<br>   &#125;<br> <br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setRadius</span><span class="hljs-params">(<span class="hljs-keyword">int</span> radius)</span> </span>&#123;<br>      <span class="hljs-keyword">this</span>.radius = radius;<br>   &#125;<br> <br>   <span class="hljs-meta">@Override</span><br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">draw</span><span class="hljs-params">()</span> </span>&#123;<br>      System.out.println(<span class="hljs-string">&quot;Circle: Draw() [Color : &quot;</span> + color <br>         +<span class="hljs-string">&quot;, x : &quot;</span> + x +<span class="hljs-string">&quot;, y :&quot;</span> + y +<span class="hljs-string">&quot;, radius :&quot;</span> + radius);<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="步骤-3"><a href="#步骤-3" class="headerlink" title="步骤 3"></a>步骤 3</h3><p>创建一个工厂，生成基于给定信息的实体类的对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.HashMap;<br> <br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ShapeFactory</span> </span>&#123;<br>   <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> HashMap&lt;String, Shape&gt; circleMap = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();<br> <br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Shape <span class="hljs-title">getCircle</span><span class="hljs-params">(String color)</span> </span>&#123;<br>      Circle circle = (Circle)circleMap.get(color);<br> <br>      <span class="hljs-keyword">if</span>(circle == <span class="hljs-keyword">null</span>) &#123;<br>         circle = <span class="hljs-keyword">new</span> Circle(color);<br>         circleMap.put(color, circle);<br>         System.out.println(<span class="hljs-string">&quot;Creating circle of color : &quot;</span> + color);<br>      &#125;<br>      <span class="hljs-keyword">return</span> circle;<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="步骤-4"><a href="#步骤-4" class="headerlink" title="步骤 4"></a>步骤 4</h3><p>使用该工厂，通过传递颜色信息来获取实体类的对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FlyweightPatternDemo</span> </span>&#123;<br>   <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String colors[] = <br>      &#123; <span class="hljs-string">&quot;Red&quot;</span>, <span class="hljs-string">&quot;Green&quot;</span>, <span class="hljs-string">&quot;Blue&quot;</span>, <span class="hljs-string">&quot;White&quot;</span>, <span class="hljs-string">&quot;Black&quot;</span> &#125;;<br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br> <br>      <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i &lt; <span class="hljs-number">20</span>; ++i) &#123;<br>         Circle circle = <br>            (Circle)ShapeFactory.getCircle(getRandomColor());<br>         circle.setX(getRandomX());<br>         circle.setY(getRandomY());<br>         circle.setRadius(<span class="hljs-number">100</span>);<br>         circle.draw();<br>      &#125;<br>   &#125;<br>   <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">getRandomColor</span><span class="hljs-params">()</span> </span>&#123;<br>      <span class="hljs-keyword">return</span> colors[(<span class="hljs-keyword">int</span>)(Math.random()*colors.length)];<br>   &#125;<br>   <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getRandomX</span><span class="hljs-params">()</span> </span>&#123;<br>      <span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>)(Math.random()*<span class="hljs-number">100</span> );<br>   &#125;<br>   <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getRandomY</span><span class="hljs-params">()</span> </span>&#123;<br>      <span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>)(Math.random()*<span class="hljs-number">100</span>);<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="步骤-5"><a href="#步骤-5" class="headerlink" title="步骤 5"></a>步骤 5</h3><p>执行程序，输出结果：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs groovy">Creating circle of <span class="hljs-attr">color :</span> Black<br><span class="hljs-attr">Circle:</span> Draw() [<span class="hljs-attr">Color :</span> Black, <span class="hljs-attr">x :</span> <span class="hljs-number">36</span>, <span class="hljs-attr">y :</span><span class="hljs-number">71</span>, <span class="hljs-attr">radius :</span><span class="hljs-number">100</span><br>Creating circle of <span class="hljs-attr">color :</span> Green<br><span class="hljs-attr">Circle:</span> Draw() [<span class="hljs-attr">Color :</span> Green, <span class="hljs-attr">x :</span> <span class="hljs-number">27</span>, <span class="hljs-attr">y :</span><span class="hljs-number">27</span>, <span class="hljs-attr">radius :</span><span class="hljs-number">100</span><br>Creating circle of <span class="hljs-attr">color :</span> White<br><span class="hljs-attr">Circle:</span> Draw() [<span class="hljs-attr">Color :</span> White, <span class="hljs-attr">x :</span> <span class="hljs-number">64</span>, <span class="hljs-attr">y :</span><span class="hljs-number">10</span>, <span class="hljs-attr">radius :</span><span class="hljs-number">100</span><br>Creating circle of <span class="hljs-attr">color :</span> Red<br><span class="hljs-attr">Circle:</span> Draw() [<span class="hljs-attr">Color :</span> Red, <span class="hljs-attr">x :</span> <span class="hljs-number">15</span>, <span class="hljs-attr">y :</span><span class="hljs-number">44</span>, <span class="hljs-attr">radius :</span><span class="hljs-number">100</span><br><span class="hljs-attr">Circle:</span> Draw() [<span class="hljs-attr">Color :</span> Green, <span class="hljs-attr">x :</span> <span class="hljs-number">19</span>, <span class="hljs-attr">y :</span><span class="hljs-number">10</span>, <span class="hljs-attr">radius :</span><span class="hljs-number">100</span><br><span class="hljs-attr">Circle:</span> Draw() [<span class="hljs-attr">Color :</span> Green, <span class="hljs-attr">x :</span> <span class="hljs-number">94</span>, <span class="hljs-attr">y :</span><span class="hljs-number">32</span>, <span class="hljs-attr">radius :</span><span class="hljs-number">100</span><br><span class="hljs-attr">Circle:</span> Draw() [<span class="hljs-attr">Color :</span> White, <span class="hljs-attr">x :</span> <span class="hljs-number">69</span>, <span class="hljs-attr">y :</span><span class="hljs-number">98</span>, <span class="hljs-attr">radius :</span><span class="hljs-number">100</span><br>Creating circle of <span class="hljs-attr">color :</span> Blue<br><span class="hljs-attr">Circle:</span> Draw() [<span class="hljs-attr">Color :</span> Blue, <span class="hljs-attr">x :</span> <span class="hljs-number">13</span>, <span class="hljs-attr">y :</span><span class="hljs-number">4</span>, <span class="hljs-attr">radius :</span><span class="hljs-number">100</span><br><span class="hljs-attr">Circle:</span> Draw() [<span class="hljs-attr">Color :</span> Green, <span class="hljs-attr">x :</span> <span class="hljs-number">21</span>, <span class="hljs-attr">y :</span><span class="hljs-number">21</span>, <span class="hljs-attr">radius :</span><span class="hljs-number">100</span><br><span class="hljs-attr">Circle:</span> Draw() [<span class="hljs-attr">Color :</span> Blue, <span class="hljs-attr">x :</span> <span class="hljs-number">55</span>, <span class="hljs-attr">y :</span><span class="hljs-number">86</span>, <span class="hljs-attr">radius :</span><span class="hljs-number">100</span><br><span class="hljs-attr">Circle:</span> Draw() [<span class="hljs-attr">Color :</span> White, <span class="hljs-attr">x :</span> <span class="hljs-number">90</span>, <span class="hljs-attr">y :</span><span class="hljs-number">70</span>, <span class="hljs-attr">radius :</span><span class="hljs-number">100</span><br><span class="hljs-attr">Circle:</span> Draw() [<span class="hljs-attr">Color :</span> Green, <span class="hljs-attr">x :</span> <span class="hljs-number">78</span>, <span class="hljs-attr">y :</span><span class="hljs-number">3</span>, <span class="hljs-attr">radius :</span><span class="hljs-number">100</span><br><span class="hljs-attr">Circle:</span> Draw() [<span class="hljs-attr">Color :</span> Green, <span class="hljs-attr">x :</span> <span class="hljs-number">64</span>, <span class="hljs-attr">y :</span><span class="hljs-number">89</span>, <span class="hljs-attr">radius :</span><span class="hljs-number">100</span><br><span class="hljs-attr">Circle:</span> Draw() [<span class="hljs-attr">Color :</span> Blue, <span class="hljs-attr">x :</span> <span class="hljs-number">3</span>, <span class="hljs-attr">y :</span><span class="hljs-number">91</span>, <span class="hljs-attr">radius :</span><span class="hljs-number">100</span><br><span class="hljs-attr">Circle:</span> Draw() [<span class="hljs-attr">Color :</span> Blue, <span class="hljs-attr">x :</span> <span class="hljs-number">62</span>, <span class="hljs-attr">y :</span><span class="hljs-number">82</span>, <span class="hljs-attr">radius :</span><span class="hljs-number">100</span><br><span class="hljs-attr">Circle:</span> Draw() [<span class="hljs-attr">Color :</span> Green, <span class="hljs-attr">x :</span> <span class="hljs-number">97</span>, <span class="hljs-attr">y :</span><span class="hljs-number">61</span>, <span class="hljs-attr">radius :</span><span class="hljs-number">100</span><br><span class="hljs-attr">Circle:</span> Draw() [<span class="hljs-attr">Color :</span> Green, <span class="hljs-attr">x :</span> <span class="hljs-number">86</span>, <span class="hljs-attr">y :</span><span class="hljs-number">12</span>, <span class="hljs-attr">radius :</span><span class="hljs-number">100</span><br><span class="hljs-attr">Circle:</span> Draw() [<span class="hljs-attr">Color :</span> Green, <span class="hljs-attr">x :</span> <span class="hljs-number">38</span>, <span class="hljs-attr">y :</span><span class="hljs-number">93</span>, <span class="hljs-attr">radius :</span><span class="hljs-number">100</span><br><span class="hljs-attr">Circle:</span> Draw() [<span class="hljs-attr">Color :</span> Red, <span class="hljs-attr">x :</span> <span class="hljs-number">76</span>, <span class="hljs-attr">y :</span><span class="hljs-number">82</span>, <span class="hljs-attr">radius :</span><span class="hljs-number">100</span><br><span class="hljs-attr">Circle:</span> Draw() [<span class="hljs-attr">Color :</span> Blue, <span class="hljs-attr">x :</span> <span class="hljs-number">95</span>, <span class="hljs-attr">y :</span><span class="hljs-number">82</span>, <span class="hljs-attr">radius :</span><span class="hljs-number">100</span><br></code></pre></td></tr></table></figure>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/911124695.html">
+                        <span class="hidden-mobile">外观模式</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

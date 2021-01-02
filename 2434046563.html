@@ -1,0 +1,546 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/about/avatar.png">
+  <link rel="icon" type="image/png" href="/img/about/avatar.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>网络基础 - 松林</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>松林</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                档案
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://thumbnail0.baidupcs.com/thumbnail/411246113v96e5c7e7fb69fa9d97a83a?fid=1345245753-250528-581643928804486&rt=pr&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-VaTtiXGogUJRHc3SUyLloXEdMos%3d&expires=8h&chkbd=0&chkv=0&dp-logid=8457577012284533700&dp-callid=0&time=1609311600&size=c1920_u1080&quality=90&vuk=1345245753&ft=image&autopolicy=1') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="首先，少年，答应别人的承诺，就一定要兑现。">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-12-30 16:51" pubdate>
+        2020年12月30日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      29
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">首先，少年，答应别人的承诺，就一定要兑现。</h1>
+            
+            <div class="markdown-body">
+              <h2 id="网络基础"><a href="#网络基础" class="headerlink" title="网络基础"></a>网络基础</h2><h2 id="1-http-响应码-301-和-302-代表的是什么？有什么区别？"><a href="#1-http-响应码-301-和-302-代表的是什么？有什么区别？" class="headerlink" title="1.http 响应码 301 和 302 代表的是什么？有什么区别？"></a>1.http 响应码 301 和 302 代表的是什么？有什么区别？</h2><p>301，302 都是HTTP状态的编码，都代表着某个URL发生了转移。</p>
+<p>区别：</p>
+<ul>
+<li><p>301 redirect: 301 代表永久性转移(Permanently Moved)。</p>
+</li>
+<li><p>302 redirect: 302 代表暂时性转移(Temporarily Moved )。</p>
+</li>
+</ul>
+<h2 id="2-forward-和-redirect-的区别？"><a href="#2-forward-和-redirect-的区别？" class="headerlink" title="2.forward 和 redirect 的区别？"></a>2.forward 和 redirect 的区别？</h2><p>Forward和Redirect代表了两种请求转发方式：直接转发和间接转发。</p>
+<p>直接转发方式（Forward），客户端和浏览器只发出一次请求，Servlet、HTML、JSP或其它信息资源，由第二个信息资源响应该请求，在请求对象request中，保存的对象对于每个信息资源是共享的。</p>
+<blockquote>
+<p>例子：“A找B借钱，B说没有，B去找C借，借到借不到都会把消息传递给A”；</p>
+</blockquote>
+<p>间接转发方式（Redirect）实际是两次HTTP请求，服务器端在响应第一次请求的时候，让浏览器再向另外一个URL发出请求，从而达到转发的目的。</p>
+<blockquote>
+<p>例子：“A找B借钱，B说没有，让A去找C借”。</p>
+</blockquote>
+<h2 id="3-tcp-和-udp的区别？"><a href="#3-tcp-和-udp的区别？" class="headerlink" title="3.tcp 和 udp的区别？"></a>3.tcp 和 udp的区别？</h2><ul>
+<li><p>TCP面向连接（如打电话要先拨号建立连接）;UDP是无连接的，即发送数据之前不需要建立连接。</p>
+</li>
+<li><p>CP提供可靠的服务。也就是说，通过TCP连接传送的数据，无差错，不丢失，不重复，且按序到达;UDP尽最大努力交付，即不保证可靠交付。</p>
+</li>
+<li><p>cp通过校验和，重传控制，序号标识，滑动窗口、确认应答实现可靠传输。如丢包时的重发控制，还可以对次序乱掉的分包进行顺序控制。</p>
+</li>
+<li><p>UDP具有较好的实时性，工作效率比TCP高，适用于对高速传输和实时性有较高的通信或广播通信。</p>
+</li>
+<li><p>每一条TCP连接只能是点到点的;UDP支持一对一，一对多，多对一和多对多的交互通信。</p>
+</li>
+<li><p>TCP对系统资源要求较多，UDP对系统资源要求较少。</p>
+</li>
+</ul>
+<h2 id="4-tcp-为什么要三次握手，两次不行吗？为什么？"><a href="#4-tcp-为什么要三次握手，两次不行吗？为什么？" class="headerlink" title="4.tcp 为什么要三次握手，两次不行吗？为什么？"></a>4.tcp 为什么要三次握手，两次不行吗？为什么？</h2><p>为了实现可靠数据传输， TCP 协议的通信双方， 都必须维护一个序列号， 以标识发送出去的数据包中， 哪些是已经被对方收到的。 三次握手的过程即是通信双方相互告知序列号起始值， 并确认对方已经收到了序列号起始值的必经步骤。</p>
+<p>如果只是两次握手， 至多只有连接发起方的起始序列号能被确认， 另一方选择的序列号则得不到确认。</p>
+<h2 id="5-tcp粘包是怎么产生的？"><a href="#5-tcp粘包是怎么产生的？" class="headerlink" title="5.tcp粘包是怎么产生的？"></a>5.tcp粘包是怎么产生的？</h2><ul>
+<li>发送方产生粘包</li>
+</ul>
+<p>采用TCP协议传输数据的客户端与服务器经常是保持一个长连接的状态（一次连接发一次数据不存在粘包），双方在连接不断开的情况下，可以一直传输数据；但当发送的数据包过于的小时，那么TCP协议默认的会启用Nagle算法，将这些较小的数据包进行合并发送（缓冲区数据发送是一个堆压的过程）；这个合并过程就是在发送缓冲区中进行的，也就是说数据发送出来它已经是粘包的状态了。</p>
+<p><img src="/img/posts/web/%E5%8F%91%E9%80%81%E6%96%B9%E4%BA%A7%E7%94%9F%E7%B2%98%E5%8C%85.png" srcset="/img/loading.gif" title="发送方产生粘包"></p>
+<ul>
+<li>接收方产生粘包</li>
+</ul>
+<p>接收方采用TCP协议接收数据时的过程是这样的：数据到底接收方，从网络模型的下方传递至传输层，传输层的TCP协议处理是将其放置接收缓冲区，然后由应用层来主动获取（C语言用recv、read等函数）；这时会出现一个问题，就是我们在程序中调用的读取数据函数不能及时的把缓冲区中的数据拿出来，而下一个数据又到来并有一部分放入的缓冲区末尾，等我们读取数据时就是一个粘包。（放数据的速度 &gt; 应用层拿数据速度）</p>
+<p><img src="/img/posts/web/%E6%8E%A5%E6%94%B6%E6%96%B9%E4%BA%A7%E7%94%9F%E7%B2%98%E5%8C%85.png" srcset="/img/loading.gif" title="接收方产生粘包"></p>
+<h2 id="6-OSI-的七层模型都有哪些？"><a href="#6-OSI-的七层模型都有哪些？" class="headerlink" title="6.OSI 的七层模型都有哪些？"></a>6.OSI 的七层模型都有哪些？</h2><ul>
+<li><p>应用层：网络服务与最终用户的一个接口。</p>
+</li>
+<li><p>表示层：数据的表示、安全、压缩。</p>
+</li>
+<li><p>会话层：建立、管理、终止会话。</p>
+</li>
+<li><p>传输层：定义传输数据的协议端口号，以及流控和差错校验。</p>
+</li>
+<li><p>网络层：进行逻辑地址寻址，实现不同网络之间的路径选择。</p>
+</li>
+<li><p>数据链路层：建立逻辑连接、进行硬件地址寻址、差错校验等功能。</p>
+</li>
+<li><p>物理层：建立、维护、断开物理连接。</p>
+</li>
+</ul>
+<h2 id="7-get-和-post-请求有哪些区别？"><a href="#7-get-和-post-请求有哪些区别？" class="headerlink" title="7.get 和 post 请求有哪些区别？"></a>7.get 和 post 请求有哪些区别？</h2><ul>
+<li><p>GET在浏览器回退时是无害的，而POST会再次提交请求。</p>
+</li>
+<li><p>GET产生的URL地址可以被Bookmark，而POST不可以。</p>
+</li>
+<li><p>GET请求会被浏览器主动cache，而POST不会，除非手动设置。</p>
+</li>
+<li><p>GET请求只能进行url编码，而POST支持多种编码方式。</p>
+</li>
+<li><p>GET请求参数会被完整保留在浏览器历史记录里，而POST中的参数不会被保留。</p>
+</li>
+<li><p>GET请求在URL中传送的参数是有长度限制的，而POST么有。</p>
+</li>
+<li><p>参数的数据类型，GET只接受ASCII字符，而POST没有限制。</p>
+</li>
+<li><p>GET比POST更不安全，因为参数直接暴露在URL上，所以不能用来传递敏感信息。</p>
+</li>
+<li><p>GET参数通过URL传递，POST放在Request body中。</p>
+</li>
+</ul>
+<h2 id="8-如何实现跨域？"><a href="#8-如何实现跨域？" class="headerlink" title="8.如何实现跨域？"></a>8.如何实现跨域？</h2><h3 id="1-图片ping或script标签跨域"><a href="#1-图片ping或script标签跨域" class="headerlink" title="1.图片ping或script标签跨域"></a>1.图片ping或script标签跨域</h3><p>图片ping常用于跟踪用户点击页面或动态广告曝光次数。<br>script标签可以得到从其他来源数据，这也是JSONP依赖的根据。</p>
+<h3 id="2-JSONP跨域"><a href="#2-JSONP跨域" class="headerlink" title="2.JSONP跨域"></a>2.JSONP跨域</h3><p>JSONP（JSON with Padding）是数据格式JSON的一种“使用模式”，可以让网页从别的网域要数据。根据 XmlHttpRequest 对象受到同源策略的影响，而利用</p>
+<ul>
+<li><p>只能使用Get请求</p>
+</li>
+<li><p>不能注册success、error等事件监听函数，不能很容易的确定JSONP请求是否失败</p>
+</li>
+<li><p>JSONP是从其他域中加载代码执行，容易受到跨站请求伪造的攻击，其安全性无法确保</p>
+</li>
+</ul>
+<h3 id="3-CORS"><a href="#3-CORS" class="headerlink" title="3.CORS"></a>3.CORS</h3><p>Cross-Origin Resource Sharing（CORS）跨域资源共享是一份浏览器技术的规范，提供了 Web 服务从不同域传来沙盒脚本的方法，以避开浏览器的同源策略，确保安全的跨域数据传输。现代浏览器使用CORS在API容器如XMLHttpRequest来减少HTTP请求的风险来源。与 JSONP 不同，CORS 除了 GET 要求方法以外也支持其他的 HTTP 要求。服务器一般需要增加如下响应头的一种或几种：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java">Access-Control-Allow-Origin: *<br>Access-Control-Allow-Methods: POST, GET, OPTIONS<br>Access-Control-Allow-Headers: X-PINGOTHER, Content-Type<br>Access-Control-Max-Age: <span class="hljs-number">86400</span><br></code></pre></td></tr></table></figure>
+
+<p>跨域请求默认不会携带Cookie信息，如果需要携带，请配置下述参数：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-string">&quot;Access-Control-Allow-Credentials&quot;</span>: <span class="hljs-keyword">true</span><br><span class="hljs-comment">// Ajax设置</span><br><span class="hljs-string">&quot;withCredentials&quot;</span>: <span class="hljs-keyword">true</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="4-修改document-domain跨子域"><a href="#4-修改document-domain跨子域" class="headerlink" title="4.修改document.domain跨子域"></a>4.修改document.domain跨子域</h3><p>前提条件：这两个域名必须属于同一个基础域名!而且所用的协议，端口都要一致，否则无法利用document.domain进行跨域，所以只能跨子域</p>
+<p>在根域范围内，允许把domain属性的值设置为它的上一级域。例如，在”aaa.xxx.com”域内，可以把domain设置为 “xxx.com” 但不能设置为 “xxx.org” 或者”com”。</p>
+<blockquote>
+<p>假如存在两个域名aaa.xxx.com和bbb.xxx.com。需要在aaa下嵌入bbb的页面，<br>由于其document.name不一致，无法在aaa下操作bbb的js。<br>可以在aaa和bbb下通过js将document.name = ‘xxx.com’;<br>设置一致，来达到互相访问的作用。</p>
+</blockquote>
+<h3 id="5-WebSocket"><a href="#5-WebSocket" class="headerlink" title="5.WebSocket"></a>5.WebSocket</h3><p>WebSocket protocol 是HTML5一种新的协议。它实现了浏览器与服务器全双工通信，同时允许跨域通讯，是server push技术的一种很棒的实现。相关文章，请查看：WebSocket、WebSocket-SockJS</p>
+<p>需要注意：WebSocket对象不支持DOM 2级事件侦听器，必须使用DOM 0级语法分别定义各个事件。</p>
+<h3 id="6-代理"><a href="#6-代理" class="headerlink" title="6.代理"></a>6.代理</h3><p>同源策略是针对浏览器端进行的限制，可以通过服务器端来解决该问题</p>
+<p>DomainA客户端（浏览器） ==&gt; DomainA服务器 ==&gt; DomainB服务器 ==&gt; DomainA客户端（浏览器）</p>
+<h3 id="8-window-postMessage"><a href="#8-window-postMessage" class="headerlink" title="8.window.postMessage()"></a>8.window.postMessage()</h3><p>HTML5新特性，可以用来向其他所有的 window 对象发送消息。需要注意的是我们必须要保证所有的脚本执行完才发送 MessageEvent，如果在函数执行的过程中调用了它，就会让后面的函数超时无法执行。</p>
+<h3 id="7-window-name-iframe"><a href="#7-window-name-iframe" class="headerlink" title="7.window.name + iframe"></a>7.window.name + iframe</h3><p>window.name通过在iframe（一般动态创建i）中加载跨域HTML文件来起作用。然后，HTML文件将传递给请求者的字符串内容赋值给window.name。然后，请求者可以检索window.name值作为响应。</p>
+<ul>
+<li><p>iframe标签的跨域能力；</p>
+</li>
+<li><p>indow.name属性值在文档刷新后依旧存在的能力（且最大允许2M左右）。</p>
+</li>
+</ul>
+<p>每个iframe都有包裹它的window，而这个window是top window的子窗口。contentWindow属性返回元素的Window对象。你可以使用这个Window对象来访问iframe的文档及其内部DOM。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- 下述用端口 10000表示：domainA；10001表示：domainB --&gt;</span><br><br><span class="hljs-comment">&lt;!-- localhost:10000 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br><span class="javascript">    <span class="hljs-keyword">var</span> iframe = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&#x27;iframe&#x27;</span>);</span><br><span class="javascript">    iframe.style.display = <span class="hljs-string">&#x27;none&#x27;</span>; <span class="hljs-comment">// 隐藏</span></span><br>    <br><span class="javascript">    <span class="hljs-keyword">var</span> state = <span class="hljs-number">0</span>; <span class="hljs-comment">// 防止页面无限刷新</span></span><br><span class="javascript">    iframe.onload = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="javascript">        <span class="hljs-keyword">if</span>(state === <span class="hljs-number">1</span>) &#123;</span><br><span class="javascript">            <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.parse(iframe.contentWindow.name));</span><br><span class="javascript">            <span class="hljs-comment">// 清除创建的iframe</span></span><br><span class="javascript">            iframe.contentWindow.document.write(<span class="hljs-string">&#x27;&#x27;</span>);</span><br>            iframe.contentWindow.close();<br><span class="javascript">            <span class="hljs-built_in">document</span>.body.removeChild(iframe);</span><br><span class="javascript">        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(state === <span class="hljs-number">0</span>) &#123;</span><br>            state = 1;<br><span class="javascript">            <span class="hljs-comment">// 加载完成，指向当前域，防止错误(proxy.html为空白页面)</span></span><br><span class="javascript">            <span class="hljs-comment">// Blocked a frame with origin &quot;http://localhost:10000&quot; from accessing a cross-origin frame.</span></span><br><span class="javascript">            iframe.contentWindow.location = <span class="hljs-string">&#x27;http://localhost:10000/proxy.html&#x27;</span>;</span><br>        &#125;<br>    &#125;;<br>    <br><span class="javascript">    iframe.src = <span class="hljs-string">&#x27;http://localhost:10001&#x27;</span>;</span><br><span class="javascript">    <span class="hljs-built_in">document</span>.body.appendChild(iframe);</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- localhost:10001 --&gt;</span><br><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span><br>    ...<br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br><span class="javascript">        <span class="hljs-built_in">window</span>.name = <span class="hljs-built_in">JSON</span>.stringify(&#123;<span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">2</span>&#125;);</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span> <br></code></pre></td></tr></table></figure>
+
+<h2 id="9-JSONP-实现原理？"><a href="#9-JSONP-实现原理？" class="headerlink" title="9.JSONP 实现原理？"></a>9.JSONP 实现原理？</h2><p>jsonp 即 json+padding，动态创建script标签，利用script标签的src属性可以获取任何域下的js脚本，通过这个特性(也可以说漏洞)，服务器端不在返回json格式，而是返回一段调用某个函数的js代码，在src中进行了调用，这样实现了跨域。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%BD%91%E7%BB%9C/">网络</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/">浏览器</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/911124684.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">设计模式</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/4103448943.html">
+                        <span class="hidden-mobile">Java异常</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
