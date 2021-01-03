@@ -1,0 +1,617 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/about/avatar.png">
+  <link rel="icon" type="image/png" href="/img/about/avatar.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>Spring - 松林</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>松林</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                档案
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/navbar/post.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="凡是过去，皆为序章。">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-01-07 14:59" pubdate>
+        2021年1月7日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      5.8k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      68
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">凡是过去，皆为序章。</h1>
+            
+            <div class="markdown-body">
+              <h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><h2 id="1-为什么要使用-spring？"><a href="#1-为什么要使用-spring？" class="headerlink" title="1.为什么要使用 spring？"></a>1.为什么要使用 spring？</h2><p><strong>1.简介</strong></p>
+<ul>
+<li><p>目的：解决企业应用开发的复杂性</p>
+</li>
+<li><p>功能：使用基本的JavaBean代替EJB，并提供了更多的企业应用功能</p>
+</li>
+<li><p>范围：任何Java应用</p>
+</li>
+</ul>
+<p>简单来说，Spring是一个轻量级的控制反转(IoC)和面向切面(AOP)的容器框架。</p>
+<p><strong>2.轻量</strong></p>
+<p>从大小与开销两方面而言Spring都是轻量的。完整的Spring框架可以在一个大小只有1MB多的JAR文件里发布。并且Spring所需的处理开销也是微不足道的。此外，Spring是非侵入式的：典型地，Spring应用中的对象不依赖于Spring的特定类。</p>
+<p><strong>3.控制反转</strong></p>
+<p>Spring通过一种称作控制反转（IoC）的技术促进了松耦合。当应用了IoC，一个对象依赖的其它对象会通过被动的方式传递进来，而不是这个对象自己创建或者查找依赖对象。你可以认为IoC与JNDI相反——不是对象从容器中查找依赖，而是容器在对象初始化时不等对象请求就主动将依赖传递给它。</p>
+<p><strong>4.面向切面</strong></p>
+<p>Spring提供了面向切面编程的丰富支持，允许通过分离应用的业务逻辑与系统级服务（例如审计（auditing）和事务（transaction）管理）进行内聚性的开发。应用对象只实现它们应该做的——完成业务逻辑——仅此而已。它们并不负责（甚至是意识）其它的系统级关注点，例如日志或事务支持。</p>
+<p><strong>5.容器</strong></p>
+<p>Spring包含并管理应用对象的配置和生命周期，在这个意义上它是一种容器，你可以配置你的每个bean如何被创建——基于一个可配置原型（prototype），你的bean可以创建一个单独的实例或者每次需要时都生成一个新的实例——以及它们是如何相互关联的。然而，Spring不应该被混同于传统的重量级的EJB容器，它们经常是庞大与笨重的，难以使用。</p>
+<p><strong>6.框架</strong></p>
+<p>Spring可以将简单的组件配置、组合成为复杂的应用。在Spring中，应用对象被声明式地组合，典型地是在一个XML文件里。Spring也提供了很多基础功能（事务管理、持久化框架集成等等），将应用逻辑的开发留给了你。</p>
+<p>所有Spring的这些特征使你能够编写更干净、更可管理、并且更易于测试的代码。它们也为Spring中的各种模块提供了基础支持。</p>
+<h2 id="2-什么是-AOP？"><a href="#2-什么是-AOP？" class="headerlink" title="2.什么是 AOP？"></a>2.什么是 AOP？</h2><p>AOP（Aspect-Oriented Programming，面向方面编程），可以说是OOP（Object-Oriented Programing，面向对象编程）的补充和完善。OOP引入封装、继承和多态性等概念来建立一种对象层次结构，用以模拟公共行为的一个集合。当我们需要为分散的对象引入公共行为的时候，OOP则显得无能为力。也就是说，OOP允许你定义从上到下的关系，但并不适合定义从左到右的关系。例如日志功能。日志代码往往水平地散布在所有对象层次中，而与它所散布到的对象的核心功能毫无关系。对于其他类型的代码，如安全性、异常处理和透明的持续性也是如此。这种散布在各处的无关的代码被称为横切（cross-cutting）代码，在OOP设计中，它导致了大量代码的重复，而不利于各个模块的重用。</p>
+<p>而AOP技术则恰恰相反，它利用一种称为“横切”的技术，剖解开封装的对象内部，并将那些影响了多个类的公共行为封装到一个可重用模块，并将其名为“Aspect”，即方面。所谓“方面”，简单地说，就是将那些与业务无关，却为业务模块所共同调用的逻辑或责任封装起来，便于减少系统的重复代码，降低模块间的耦合度，并有利于未来的可操作性和可维护性。AOP代表的是一个横向的关系，如果说“对象”是一个空心的圆柱体，其中封装的是对象的属性和行为；那么面向方面编程的方法，就仿佛一把利刃，将这些空心圆柱体剖开，以获得其内部的消息。而剖开的切面，也就是所谓的“方面”了。然后它又以巧夺天功的妙手将这些剖开的切面复原，不留痕迹。</p>
+<p>使用“横切”技术，AOP把软件系统分为两个部分：核心关注点和横切关注点。业务处理的主要流程是核心关注点，与之关系不大的部分是横切关注点。横切关注点的一个特点是，他们经常发生在核心关注点的多处，而各处都基本相似。比如权限认证、日志、事务处理。Aop 的作用在于分离系统中的各种关注点，将核心关注点和横切关注点分离开来。正如Avanade公司的高级方案构架师Adam Magee所说，AOP的核心思想就是“将应用程序中的商业逻辑同对其提供支持的通用服务进行分离。”</p>
+<h2 id="3-什么是-IOC？"><a href="#3-什么是-IOC？" class="headerlink" title="3.什么是 IOC？"></a>3.什么是 IOC？</h2><p>IOC是Inversion of Control的缩写，多数书籍翻译成“控制反转”。</p>
+<p>1996年，Michael Mattson在一篇有关探讨面向对象框架的文章中，首先提出了IOC 这个概念。对于面向对象设计及编程的基本思想，前面我们已经讲了很多了，不再赘述，简单来说就是把复杂系统分解成相互合作的对象，这些对象类通过封装以后，内部实现对外部是透明的，从而降低了解决问题的复杂度，而且可以灵活地被重用和扩展。</p>
+<p>IOC理论提出的观点大体是这样的：借助于“第三方”实现具有依赖关系的对象之间的解耦。如下图：</p>
+<p><img src="/img/posts/java/spring/IOC%E5%AE%B9%E5%99%A8.png" srcset="/img/loading.gif" title="IOC容器"></p>
+<p>大家看到了吧，由于引进了中间位置的“第三方”，也就是IOC容器，使得A、B、C、D这4个对象没有了耦合关系，齿轮之间的传动全部依靠“第三方”了，全部对象的控制权全部上缴给“第三方”IOC容器，所以，IOC容器成了整个系统的关键核心，它起到了一种类似“粘合剂”的作用，把系统中的所有对象粘合在一起发挥作用，如果没有这个“粘合剂”，对象与对象之间会彼此失去联系，这就是有人把IOC容器比喻成“粘合剂”的由来。</p>
+<p>我们再来做个试验：把上图中间的IOC容器拿掉，然后再来看看这套系统：</p>
+<p><img src="/img/posts/java/spring/IOC%E5%AE%B9%E5%99%A8%E5%8E%BB%E6%8E%89.png" srcset="/img/loading.gif" title="IOC容器去掉"></p>
+<p>我们现在看到的画面，就是我们要实现整个系统所需要完成的全部内容。这时候，A、B、C、D这4个对象之间已经没有了耦合关系，彼此毫无联系，这样的话，当你在实现A的时候，根本无须再去考虑B、C和D了，对象之间的依赖关系已经降低到了最低程度。所以，如果真能实现IOC容器，对于系统开发而言，这将是一件多么美好的事情，参与开发的每一成员只要实现自己的类就可以了，跟别人没有任何关系！</p>
+<p>我们再来看看，控制反转(IOC)到底为什么要起这么个名字？我们来对比一下：</p>
+<p>软件系统在没有引入IOC容器之前，如图1所示，对象A依赖于对象B，那么对象A在初始化或者运行到某一点的时候，自己必须主动去创建对象B或者使用已经创建的对象B。无论是创建还是使用对象B，控制权都在自己手上。</p>
+<p>软件系统在引入IOC容器之后，这种情形就完全改变了，如图3所示，由于IOC容器的加入，对象A与对象B之间失去了直接联系，所以，当对象A运行到需要对象B的时候，IOC容器会主动创建一个对象B注入到对象A需要的地方。</p>
+<p>通过前后的对比，我们不难看出来：对象A获得依赖对象B的过程,由主动行为变为了被动行为，控制权颠倒过来了，这就是“控制反转”这个名称的由来。</p>
+<h2 id="4-spring-有哪些主要模块？"><a href="#4-spring-有哪些主要模块？" class="headerlink" title="4.spring 有哪些主要模块？"></a>4.spring 有哪些主要模块？</h2><p>Spring框架至今已集成了20多个模块。这些模块主要被分如下图所示的核心容器、数据访问/集成,、Web、AOP（面向切面编程）、工具、消息和测试模块。</p>
+<p><img src="/img/posts/java/spring/spring%E4%B8%BB%E8%A6%81%E6%A8%A1%E5%9D%97.png" srcset="/img/loading.gif" title="spring主要模块"></p>
+<h2 id="5-spring-常用的注入方式有哪些？"><a href="#5-spring-常用的注入方式有哪些？" class="headerlink" title="5.spring 常用的注入方式有哪些？"></a>5.spring 常用的注入方式有哪些？</h2><p>Spring通过DI（依赖注入）实现IOC（控制反转），常用的注入方式主要有三种：</p>
+<ul>
+<li><p>构造方法注入</p>
+</li>
+<li><p>setter注入</p>
+</li>
+<li><p>基于注解的注入</p>
+</li>
+</ul>
+<h2 id="6-spring-中的-bean-是线程安全的吗？"><a href="#6-spring-中的-bean-是线程安全的吗？" class="headerlink" title="6.spring 中的 bean 是线程安全的吗？"></a>6.spring 中的 bean 是线程安全的吗？</h2><p>Spring容器中的Bean是否线程安全，容器本身并没有提供Bean的线程安全策略，因此可以说spring容器中的Bean本身不具备线程安全的特性，但是具体还是要结合具体scope的Bean去研究。</p>
+<h2 id="7-spring-支持几种-bean-的作用域？"><a href="#7-spring-支持几种-bean-的作用域？" class="headerlink" title="7.spring 支持几种 bean 的作用域？"></a>7.spring 支持几种 bean 的作用域？</h2><p>当通过spring容器创建一个Bean实例时，不仅可以完成Bean实例的实例化，还可以为Bean指定特定的作用域。Spring支持如下5种作用域：</p>
+<ul>
+<li><p>singleton：单例模式，在整个Spring IoC容器中，使用singleton定义的Bean将只有一个实例</p>
+</li>
+<li><p>prototype：原型模式，每次通过容器的getBean方法获取prototype定义的Bean时，都将产生一个新的Bean实例</p>
+</li>
+<li><p>equest：对于每次HTTP请求，使用request定义的Bean都将产生一个新实例，即每次HTTP请求将会产生不同的Bean实例。只有在Web应用中使用Spring时，该作用域才有效</p>
+</li>
+<li><p>session：对于每次HTTP Session，使用session定义的Bean豆浆产生一个新实例。同样只有在Web应用中使用Spring时，该作用域才有效</p>
+</li>
+<li><p>globalsession：每个全局的HTTP Session，使用session定义的Bean都将产生一个新实例。典型情况下，仅在使用portlet context的时候有效。同样只有在Web应用中使用Spring时，该作用域才有效</p>
+</li>
+</ul>
+<p>其中比较常用的是singleton和prototype两种作用域。对于singleton作用域的Bean，每次请求该Bean都将获得相同的实例。容器负责跟踪Bean实例的状态，负责维护Bean实例的生命周期行为；如果一个Bean被设置成prototype作用域，程序每次请求该id的Bean，Spring都会新建一个Bean实例，然后返回给程序。在这种情况下，Spring容器仅仅使用new 关键字创建Bean实例，一旦创建成功，容器不在跟踪实例，也不会维护Bean实例的状态。</p>
+<p>如果不指定Bean的作用域，Spring默认使用singleton作用域。Java在创建Java实例时，需要进行内存申请；销毁实例时，需要完成垃圾回收，这些工作都会导致系统开销的增加。因此，prototype作用域Bean的创建、销毁代价比较大。而singleton作用域的Bean实例一旦创建成功，可以重复使用。因此，除非必要，否则尽量避免将Bean被设置成prototype作用域。</p>
+<h2 id="8-spring-自动装配-bean-有哪些方式？"><a href="#8-spring-自动装配-bean-有哪些方式？" class="headerlink" title="8.spring 自动装配 bean 有哪些方式？"></a>8.spring 自动装配 bean 有哪些方式？</h2><p>Spring容器负责创建应用程序中的bean同时通过ID来协调这些对象之间的关系。作为开发人员，我们需要告诉Spring要创建哪些bean并且如何将其装配到一起。</p>
+<p>spring中bean装配有两种方式：</p>
+<ul>
+<li>隐式的bean发现机制和自动装配</li>
+<li>在java代码或者XML中进行显示配置</li>
+</ul>
+<h2 id="9-spring-事务实现方式有哪些？"><a href="#9-spring-事务实现方式有哪些？" class="headerlink" title="9.spring 事务实现方式有哪些？"></a>9.spring 事务实现方式有哪些？</h2><ul>
+<li><p>编程式事务管理对基于 POJO 的应用来说是唯一选择。我们需要在代码中调用beginTransaction()、commit()、rollback()等事务管理相关的方法，这就是编程式事务管理。</p>
+</li>
+<li><p>基于 TransactionProxyFactoryBean 的声明式事务管理</p>
+</li>
+<li><p>基于 @Transactional 的声明式事务管理</p>
+</li>
+<li><p>基于 Aspectj AOP 配置事务</p>
+</li>
+</ul>
+<h2 id="10-说一下-spring-的事务隔离？"><a href="#10-说一下-spring-的事务隔离？" class="headerlink" title="10.说一下 spring 的事务隔离？"></a>10.说一下 spring 的事务隔离？</h2><p>事务隔离级别指的是一个事务对数据的修改与另一个并行的事务的隔离程度，当多个事务同时访问相同数据时，如果没有采取必要的隔离机制，就可能发生以下问题：</p>
+<ul>
+<li>脏读：一个事务读到另一个事务未提交的更新数据。</li>
+<li>幻读：例如第一个事务对一个表中的数据进行了修改，比如这种修改涉及到表中的“全部数据行”。同时，第二个事务也修改这个表中的数据，这种修改是向表中插入“一行新数据”。那么，以后就会发生操作第一个事务的用户发现表中还存在没有修改的数据行，就好象发生了幻觉一样。</li>
+<li>不可重复读：比方说在同一个事务中先后执行两条一模一样的select语句，期间在此次事务中没有执行过任何DDL语句，但先后得到的结果不一致，这就是不可重复读。</li>
+</ul>
+<h2 id="11-spring-mvc-运行流程？"><a href="#11-spring-mvc-运行流程？" class="headerlink" title="11.spring mvc 运行流程？"></a>11.spring mvc 运行流程？</h2><p>Spring MVC运行流程图：</p>
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/posts/java/spring/SpringMVC%E8%BF%90%E8%A1%8C%E6%B5%81%E7%A8%8B%E5%9B%BE1.png" srcset="/img/loading.gif" title="SpringMVC运行流程图1"></div><div class="group-image-wrap"><img src="/img/posts/java/spring/SpringMVC%E8%BF%90%E8%A1%8C%E6%B5%81%E7%A8%8B%E5%9B%BE2.png" srcset="/img/loading.gif" title="SpringMVC运行流程图2"></div></div></div>
+
+<p><strong>流程描述：</strong></p>
+<ol>
+<li><p>用户向服务器发送请求，请求被Spring 前端控制Servelt DispatcherServlet捕获；</p>
+</li>
+<li><p>DispatcherServlet对请求URL进行解析，得到请求资源标识符（URI）。然后根据该URI，调用HandlerMapping获得该Handler配置的所有相关的对象（包括Handler对象以及Handler对象对应的拦截器），最后以HandlerExecutionChain对象的形式返回；</p>
+</li>
+<li><p>DispatcherServlet 根据获得的Handler，选择一个合适的HandlerAdapter；（附注：如果成功获得HandlerAdapter后，此时将开始执行拦截器的preHandler(…)方法）</p>
+</li>
+<li><p>提取Request中的模型数据，填充Handler入参，开始执行Handler（Controller)。 在填充Handler的入参过程中，根据你的配置，Spring将帮你做一些额外的工作：</p>
+</li>
+</ol>
+<blockquote>
+<p>1、HttpMessageConveter： 将请求消息（如Json、xml等数据）转换成一个对象，将对象转换为指定的响应信息。<br>2、数据转换：对请求消息进行数据转换。如String转换成Integer、Double等。<br>3、数据根式化：对请求消息进行数据格式化。 如将字符串转换成格式化数字或格式化日期等。<br>4、数据验证： 验证数据的有效性（长度、格式等），验证结果存储到BindingResult或Error中。</p>
+</blockquote>
+<ol start="5">
+<li><p>Handler执行完成后，向DispatcherServlet 返回一个ModelAndView对象；</p>
+</li>
+<li><p>根据返回的ModelAndView，选择一个适合的ViewResolver（必须是已经注册到Spring容器中的ViewResolver)返回给DispatcherServlet ；</p>
+</li>
+<li><p>ViewResolver 结合Model和View，来渲染视图；</p>
+</li>
+<li><p>将渲染结果返回给客户端。</p>
+</li>
+</ol>
+<h2 id="12-spring-mvc-有哪些组件？"><a href="#12-spring-mvc-有哪些组件？" class="headerlink" title="12.spring mvc 有哪些组件？"></a>12.spring mvc 有哪些组件？</h2><p>Spring MVC的核心组件：</p>
+<ul>
+<li>DispatcherServlet：中央控制器，把请求给转发到具体的控制类</li>
+<li>Controller：具体处理请求的控制器</li>
+<li>HandlerMapping：映射处理器，负责映射中央处理器转发给controller时的映射策略</li>
+<li>ModelAndView：服务层返回的数据和视图层的封装类</li>
+<li>ViewResolver：视图解析器，解析具体的视图</li>
+<li>Interceptors ：拦截器，负责拦截我们定义的请求然后做处理工作</li>
+</ul>
+<h2 id="13-RequestMapping-的作用是什么？"><a href="#13-RequestMapping-的作用是什么？" class="headerlink" title="13.@RequestMapping 的作用是什么？"></a>13.@RequestMapping 的作用是什么？</h2><p>RequestMapping是一个用来处理请求地址映射的注解，可用于类或方法上。用于类上，表示类中的所有响应请求的方法都是以该地址作为父路径。</p>
+<p>RequestMapping注解有六个属性：</p>
+<ul>
+<li>value：指定请求的实际地址，指定的地址可以是URI Template 模式（后面将会说明）；</li>
+<li>method：指定请求的method类型， GET、POST、PUT、DELETE等；</li>
+<li>consumes：指定处理请求的提交内容类型（Content-Type），例如application/json, text/html；</li>
+<li>produces：指定返回的内容类型，仅当request请求头中的(Accept)类型中包含该指定类型才返回；</li>
+<li>arams： 指定request中必须包含某些参数值是，才让该方法处理。</li>
+<li>headers：指定request中必须包含某些指定的header值，才能让该方法处理请求。</li>
+</ul>
+<h2 id="14-Autowired-的作用是什么？"><a href="#14-Autowired-的作用是什么？" class="headerlink" title="14.@Autowired 的作用是什么？"></a>14.@Autowired 的作用是什么？</h2><p>首先要知道另一个东西，default-autowire，它是在xml文件中进行配置的，可以设置为byName、byType、constructor和autodetect；比如byName，不用显式的在bean中写出依赖的对象，它会自动的匹配其它bean中id名与本bean的set**相同的，并自动装载。</p>
+<p>@Autowired是用在JavaBean中的注解，通过byType形式，用来给指定的字段或方法注入所需的外部资源。</p>
+<p>两者的功能是一样的，就是能减少或者消除属性或构造器参数的设置，只是配置地方不一样而已。</p>
+<p>autowire四种模式的区别：</p>
+<p><img src="/img/posts/java/spring/@Autowire%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%A8%A1%E5%BC%8F.jpg" srcset="/img/loading.gif" title="@Autowire的四种模式"></p>
+<p>先看一下bean实例化和@Autowired装配过程：</p>
+<ol>
+<li><p>一切都是从bean工厂的getBean方法开始的，一旦该方法调用总会返回一个bean实例，无论当前是否存在，不存在就实例化一个并装配，否则直接返回。（Spring MVC是在什么时候开始执行bean的实例化过程的呢？其实就在组件扫描完成之后）</p>
+</li>
+<li><p>实例化和装配过程中会多次递归调用getBean方法来解决类之间的依赖。</p>
+</li>
+<li><p>Spring几乎考虑了所有可能性，所以方法特别复杂但完整有条理。</p>
+</li>
+<li><p>@Autowired最终是根据类型来查找和装配元素的，但是我们设置了<beans default-autowire="byName"/>后会影响最终的类型匹配查找。因为在前面有根据BeanDefinition的autowire类型设置PropertyValue值得一步，其中会有新实例的创建和注册。就是那个autowireByName方法。</p>
+</li>
+</ol>
+<p>下面通过@Autowired来说明一下用法：</p>
+<h3 id="Setter方法中的-Autowired"><a href="#Setter方法中的-Autowired" class="headerlink" title="Setter方法中的@Autowired"></a>Setter方法中的@Autowired</h3><p>你可以在 JavaBean中的 setter 方法中使用 @Autowired 注解。当 Spring遇到一个在 setter 方法中使用的 @Autowired 注解，它会在方法中执行 byType 自动装配。</p>
+<p>TextEditor.java：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.tutorialspoint;<br><span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TextEditor</span> </span>&#123;<br>   <span class="hljs-keyword">private</span> SpellChecker spellChecker;<br>   <span class="hljs-meta">@Autowired</span><br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setSpellChecker</span><span class="hljs-params">( SpellChecker spellChecker )</span></span>&#123;<br>      <span class="hljs-keyword">this</span>.spellChecker = spellChecker;<br>   &#125;<br>   <span class="hljs-function"><span class="hljs-keyword">public</span> SpellChecker <span class="hljs-title">getSpellChecker</span><span class="hljs-params">( )</span> </span>&#123;<br>      <span class="hljs-keyword">return</span> spellChecker;<br>   &#125;<br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">spellCheck</span><span class="hljs-params">()</span> </span>&#123;<br>      spellChecker.checkSpelling();<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>SpellChecker.jav：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.tutorialspoint;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SpellChecker</span> </span>&#123;<br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">SpellChecker</span><span class="hljs-params">()</span></span>&#123;<br>      System.out.println(<span class="hljs-string">&quot;Inside SpellChecker constructor.&quot;</span> );<br>   &#125;<br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">checkSpelling</span><span class="hljs-params">()</span></span>&#123;<br>      System.out.println(<span class="hljs-string">&quot;Inside checkSpelling.&quot;</span> );<br>   &#125;  <br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>MainApp.java：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.tutorialspoint;<br><span class="hljs-keyword">import</span> org.springframework.context.ApplicationContext;<br><span class="hljs-keyword">import</span> org.springframework.context.support.ClassPathXmlApplicationContext;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainApp</span> </span>&#123;<br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>      ApplicationContext context = <span class="hljs-keyword">new</span> ClassPathXmlApplicationContext(<span class="hljs-string">&quot;Beans.xml&quot;</span>);<br>      TextEditor te = (TextEditor) context.getBean(<span class="hljs-string">&quot;textEditor&quot;</span>);<br>      te.spellCheck();<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>Beans.xml：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">xmlns:context</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/context&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans</span></span><br><span class="hljs-tag"><span class="hljs-string">    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd</span></span><br><span class="hljs-tag"><span class="hljs-string">    http://www.springframework.org/schema/context</span></span><br><span class="hljs-tag"><span class="hljs-string">    http://www.springframework.org/schema/context/spring-context-3.0.xsd&quot;</span>&gt;</span><br><br>   <span class="hljs-tag">&lt;<span class="hljs-name">context:annotation-config</span>/&gt;</span><br><br>   <span class="hljs-comment">&lt;!-- Definition for textEditor bean without constructor-arg  --&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;textEditor&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.tutorialspoint.TextEditor&quot;</span>&gt;</span><br>   <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br><br>   <span class="hljs-comment">&lt;!-- Definition for spellChecker bean --&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;spellChecker&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.tutorialspoint.SpellChecker&quot;</span>&gt;</span><br>   <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>一旦你已经完成的创建了源文件和 bean 配置文件，让我们运行一下应用程序。如果你的应用程序一切都正常的话，这将会输出以下消息：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs text">Inside SpellChecker constructor.<br>Inside checkSpelling.<br></code></pre></td></tr></table></figure>
+
+<h3 id="属性中的-Autowired"><a href="#属性中的-Autowired" class="headerlink" title="属性中的@Autowired"></a>属性中的@Autowired</h3><p>你可以在属性中使用 @Autowired 注释来除去 setter 方法。当时使用 为自动连接属性传递的时候，Spring 会将这些传递过来的值或者引用自动分配给那些属性。所以利用在属性中 @Autowired 的用法，你的 TextEditor.java 文件将变成如下所示：</p>
+<p>TextEditor.java:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.tutorialspoint;<br><span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TextEditor</span> </span>&#123;<br>   <span class="hljs-meta">@Autowired</span><br>   <span class="hljs-keyword">private</span> SpellChecker spellChecker;<br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">TextEditor</span><span class="hljs-params">()</span> </span>&#123;<br>      System.out.println(<span class="hljs-string">&quot;Inside TextEditor constructor.&quot;</span> );<br>   &#125;  <br>   <span class="hljs-function"><span class="hljs-keyword">public</span> SpellChecker <span class="hljs-title">getSpellChecker</span><span class="hljs-params">( )</span></span>&#123;<br>      <span class="hljs-keyword">return</span> spellChecker;<br>   &#125;  <br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">spellCheck</span><span class="hljs-params">()</span></span>&#123;<br>      spellChecker.checkSpelling();<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>Beans.xml：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">xmlns:context</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/context&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans</span></span><br><span class="hljs-tag"><span class="hljs-string">    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd</span></span><br><span class="hljs-tag"><span class="hljs-string">    http://www.springframework.org/schema/context</span></span><br><span class="hljs-tag"><span class="hljs-string">    http://www.springframework.org/schema/context/spring-context-3.0.xsd&quot;</span>&gt;</span><br><br>   <span class="hljs-tag">&lt;<span class="hljs-name">context:annotation-config</span>/&gt;</span><br><br>   <span class="hljs-comment">&lt;!-- Definition for textEditor bean --&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;textEditor&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.tutorialspoint.TextEditor&quot;</span>&gt;</span><br>   <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br><br>   <span class="hljs-comment">&lt;!-- Definition for spellChecker bean --&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;spellChecker&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.tutorialspoint.SpellChecker&quot;</span>&gt;</span><br>   <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>一旦你在源文件和 bean 配置文件中完成了上面两处改变，让我们运行一下应用程序。如果你的应用程序一切都正常的话，这将会输出以下消息：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">Inside TextEditor constructor.<br>Inside SpellChecker constructor.<br>Inside checkSpelling.<br></code></pre></td></tr></table></figure>
+
+<h3 id="构造函数中的-Autowired"><a href="#构造函数中的-Autowired" class="headerlink" title="构造函数中的@Autowired"></a>构造函数中的@Autowired</h3><p>你也可以在构造函数中使用 @Autowired。一个构造函数 @Autowired 说明当创建 bean 时，即使在 XML 文件中没有使用 元素配置 bean ，构造函数也会被自动连接。让我们检查一下下面的示例。</p>
+<p>TextEditor.java：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.tutorialspoint;<br><span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TextEditor</span> </span>&#123;<br>   <span class="hljs-keyword">private</span> SpellChecker spellChecker;<br>   <span class="hljs-meta">@Autowired</span><br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">TextEditor</span><span class="hljs-params">(SpellChecker spellChecker)</span></span>&#123;<br>      System.out.println(<span class="hljs-string">&quot;Inside TextEditor constructor.&quot;</span> );<br>      <span class="hljs-keyword">this</span>.spellChecker = spellChecker;<br>   &#125;<br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">spellCheck</span><span class="hljs-params">()</span></span>&#123;<br>      spellChecker.checkSpelling();<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>Beans.xml：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">xmlns:context</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/context&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans</span></span><br><span class="hljs-tag"><span class="hljs-string">    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd</span></span><br><span class="hljs-tag"><span class="hljs-string">    http://www.springframework.org/schema/context</span></span><br><span class="hljs-tag"><span class="hljs-string">    http://www.springframework.org/schema/context/spring-context-3.0.xsd&quot;</span>&gt;</span><br><br>   <span class="hljs-tag">&lt;<span class="hljs-name">context:annotation-config</span>/&gt;</span><br><br>   <span class="hljs-comment">&lt;!-- Definition for textEditor bean without constructor-arg  --&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;textEditor&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.tutorialspoint.TextEditor&quot;</span>&gt;</span><br>   <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br><br>   <span class="hljs-comment">&lt;!-- Definition for spellChecker bean --&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;spellChecker&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.tutorialspoint.SpellChecker&quot;</span>&gt;</span><br>   <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>一旦你在源文件和 bean 配置文件中完成了上面两处改变，让我们运行一下应用程序。如果你的应用程序一切都正常的话，这将会输出以下消息：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">Inside TextEditor constructor.<br>Inside SpellChecker constructor.<br>Inside checkSpelling.<br></code></pre></td></tr></table></figure>
+
+<h3 id="Autowired-的（required-false）选项"><a href="#Autowired-的（required-false）选项" class="headerlink" title="@Autowired 的（required=false）选项"></a>@Autowired 的（required=false）选项</h3><p>默认情况下，@Autowired 注释意味着依赖是必须的，它类似于 @Required 注释，然而，你可以使用 @Autowired 的 （required=false） 选项关闭默认行为。</p>
+<p>即使你不为 age 属性传递任何参数，下面的示例也会成功运行，但是对于 name 属性则需要一个参数。你可以自己尝试一下这个示例，因为除了只有 Student.java 文件被修改以外，它和 @Required 注释示例是相似的。</p>
+<p>Student.java：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.tutorialspoint;<br><span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;<br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> </span>&#123;<br>   <span class="hljs-keyword">private</span> Integer age;<br>   <span class="hljs-keyword">private</span> String name;<br>   <span class="hljs-meta">@Autowired(required=false)</span><br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setAge</span><span class="hljs-params">(Integer age)</span> </span>&#123;<br>      <span class="hljs-keyword">this</span>.age = age;<br>   &#125;  <br>   <span class="hljs-function"><span class="hljs-keyword">public</span> Integer <span class="hljs-title">getAge</span><span class="hljs-params">()</span> </span>&#123;<br>      <span class="hljs-keyword">return</span> age;<br>   &#125;<br>   <span class="hljs-meta">@Autowired</span><br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setName</span><span class="hljs-params">(String name)</span> </span>&#123;<br>      <span class="hljs-keyword">this</span>.name = name;<br>   &#125;   <br>   <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>&#123;<br>      <span class="hljs-keyword">return</span> name;<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/spring/">spring</a>
+                    
+                      <a class="hover-with-bg" href="/tags/spring-MVC/">spring MVC</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/981222001.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">SpringBoot</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/911124684.html">
+                        <span class="hidden-mobile">设计模式</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
