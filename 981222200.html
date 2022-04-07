@@ -1,0 +1,464 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/about/avatar.png">
+  <link rel="icon" type="image/png" href="/img/about/avatar.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>SQL Server 笔记 - 松林</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>松林</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-books"></i>
+                档案
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-bookmark-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/posts/banner_img/100.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Life oriented programming">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+</div>
+
+<div class="mt-1">
+  
+
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Life oriented programming</h1>
+            
+            <div class="markdown-body">
+              <h1 id="SQL-Server-笔记"><a href="#SQL-Server-笔记" class="headerlink" title="SQL Server 笔记"></a>SQL Server 笔记</h1><p>工作、日常使用过的 SQL Server 代码记录。</p>
+<h2 id="将查询的内容合进行拼接"><a href="#将查询的内容合进行拼接" class="headerlink" title="将查询的内容合进行拼接"></a>将查询的内容合进行拼接</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span>	MO.MOId,<br>        MOItem.MOId,<br>        MOItemId,<br>        <span class="hljs-keyword">STUFF</span>((<span class="hljs-keyword">SELECT</span> <span class="hljs-string">&#x27;,&#x27;</span> + MOItemId <span class="hljs-keyword">FROM</span> MOItem <span class="hljs-keyword">WHERE</span> MOItem.MOId=MO.MOId <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> CreateDate <span class="hljs-keyword">FOR</span> <span class="hljs-keyword">XML</span> <span class="hljs-keyword">PATH</span>(<span class="hljs-string">&#x27;&#x27;</span>)),<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-string">&#x27;&#x27;</span>) <span class="hljs-keyword">AS</span> MOItemIds<br><span class="hljs-keyword">FROM</span> MO <span class="hljs-keyword">LEFT</span> <span class="hljs-keyword">JOIN</span> MOItem <span class="hljs-keyword">ON</span> MOItem.MOId=MO.MOId <br><span class="hljs-keyword">WHERE</span> MO.MOId = <span class="hljs-string">&#x27;MOD100002T30&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="img%5Cposts%5CSQLServer%5C%E5%B0%86%E6%9F%A5%E8%AF%A2%E7%9A%84%E5%86%85%E5%AE%B9%E5%90%88%E8%BF%9B%E8%A1%8C%E6%8B%BC%E6%8E%A5.jpg" srcset="/img/loading.gif"></p>
+<h2 id="间隔符号的字符串转列表字符串"><a href="#间隔符号的字符串转列表字符串" class="headerlink" title="间隔符号的字符串转列表字符串"></a>间隔符号的字符串转列表字符串</h2><p>将某个固定符号间隔的字符串转为列表字符串</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DECLARE</span> @<span class="hljs-built_in">TEXT</span> <span class="hljs-keyword">NVARCHAR</span>(<span class="hljs-number">100</span>) = <span class="hljs-string">&#x27;123,456,789&#x27;</span><br><span class="hljs-keyword">SELECT</span> <span class="hljs-string">&#x27;[&#x27;&#x27;&#x27;</span>+<span class="hljs-keyword">REPLACE</span>(@<span class="hljs-built_in">TEXT</span>,<span class="hljs-string">&#x27;,&#x27;</span>,<span class="hljs-string">&#x27;&#x27;&#x27;,&#x27;&#x27;&#x27;</span>)+<span class="hljs-string">&#x27;&#x27;&#x27;]&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="img%5Cposts%5CSQLServer%5C%E9%97%B4%E9%9A%94%E7%AC%A6%E5%8F%B7%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E5%88%97%E8%A1%A8%E5%AD%97%E7%AC%A6%E4%B8%B2.jpg" srcset="/img/loading.gif"></p>
+<h2 id="截取间隔符号的字符串的第一个间隔字符串"><a href="#截取间隔符号的字符串的第一个间隔字符串" class="headerlink" title="截取间隔符号的字符串的第一个间隔字符串"></a>截取间隔符号的字符串的第一个间隔字符串</h2><p>类似Python的 string.split(‘,’)[0] 获取第一个”,”拆分的字符串</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DECLARE</span> @Numbers <span class="hljs-keyword">nvarchar</span>(<span class="hljs-number">100</span>) = <span class="hljs-string">&#x27;123,4567,8910&#x27;</span><br>   <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">SUBSTRING</span>(@Numbers,<span class="hljs-number">0</span>,<span class="hljs-keyword">CHARINDEX</span>(<span class="hljs-string">&#x27;,&#x27;</span>,@Numbers))<br></code></pre></td></tr></table></figure>
+
+<p><img src="img%5Cposts%5CSQLServer%5C%E6%88%AA%E5%8F%96%E9%97%B4%E9%9A%94%E7%AC%A6%E5%8F%B7%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%97%B4%E9%9A%94%E5%AD%97%E7%AC%A6%E4%B8%B2.jpg" srcset="/img/loading.gif"></p>
+<h2 id="ROW-NUMBER-OVER-使用记录"><a href="#ROW-NUMBER-OVER-使用记录" class="headerlink" title="ROW_NUMBER()OVER() 使用记录"></a>ROW_NUMBER()OVER() 使用记录</h2><h3 id="获取MO表中第一个创建的明细"><a href="#获取MO表中第一个创建的明细" class="headerlink" title="获取MO表中第一个创建的明细"></a>获取MO表中第一个创建的明细</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> MO.MOId,MOItem.MOId,MOItem.MOItemId,MOItem.CreateDate,ROW_NUMBER()<span class="hljs-keyword">OVER</span>(<span class="hljs-keyword">PARTITION</span> <span class="hljs-keyword">BY</span> MOItem.MOId <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> MOItem.CreateDate) <span class="hljs-keyword">AS</span> <span class="hljs-keyword">ROWS</span><br><span class="hljs-keyword">FROM</span> MO<br><span class="hljs-keyword">LEFT</span> <span class="hljs-keyword">JOIN</span> MOItem <span class="hljs-keyword">ON</span> MOItem.MOId = MO.MOId<br>   <span class="hljs-keyword">WHERE</span> MOItem.MOId <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="img%5Cposts%5CSQLServer%5C%E8%8E%B7%E5%8F%96MO%E8%A1%A8%E4%B8%AD%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%88%9B%E5%BB%BA%E7%9A%84%E6%98%8E%E7%BB%86.jpg" srcset="/img/loading.gif"></p>
+<h2 id="判断临时表是否存在"><a href="#判断临时表是否存在" class="headerlink" title="判断临时表是否存在"></a>判断临时表是否存在</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> TOP <span class="hljs-number">1</span> * <span class="hljs-keyword">INTO</span> <span class="hljs-comment">#SaveInfo from MO</span><br><span class="hljs-keyword">IF</span> <span class="hljs-keyword">EXISTS</span> (<span class="hljs-keyword">SELECT</span> <span class="hljs-number">1</span> <span class="hljs-keyword">FROM</span> tempdb.dbo.sysobjects <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">id</span> = OBJECT_ID(N<span class="hljs-string">&#x27;tempdb..#SaveInfo&#x27;</span>) <span class="hljs-keyword">and</span> <span class="hljs-keyword">type</span>=<span class="hljs-string">&#x27;U&#x27;</span>)<br><span class="hljs-keyword">BEGIN</span><br>	<span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> <span class="hljs-comment">#SaveInfo</span><br>	<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-comment">#SaveInfo</span><br><span class="hljs-keyword">END</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="img%5Cposts%5CSQLServer%5C%E5%88%A4%E6%96%AD%E4%B8%B4%E6%97%B6%E8%A1%A8%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8.jpg" srcset="/img/loading.gif"></p>
+<h2 id="在数据库中操作另一个数据库的数据"><a href="#在数据库中操作另一个数据库的数据" class="headerlink" title="在数据库中操作另一个数据库的数据"></a>在数据库中操作另一个数据库的数据</h2><h3 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> OPENROWSET(	<br>               <span class="hljs-string">&#x27;SQLNCLI&#x27;</span>,  <br>               <span class="hljs-string">&#x27;server=192.168.3.12;uid=sa;pwd=sa;database=OrBitTest&#x27;</span>,  <br>               <span class="hljs-string">&#x27;SELECT * FROM InterfaceExecLog WHERE InterfaceExecLogId=&#x27;&#x27;615108743A1A&#x27;&#x27;&#x27;</span>) <br></code></pre></td></tr></table></figure>
+
+<h3 id="更新数据"><a href="#更新数据" class="headerlink" title="更新数据"></a>更新数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">UPDATE</span> OPENROWSET(<br>            <span class="hljs-string">&#x27;SQLNCLI&#x27;</span>, <br>            <span class="hljs-string">&#x27;server=192.168.3.12;uid=sa;pwd=sa;database=OrBitTest&#x27;</span>,  <br>            <span class="hljs-comment">--更新时将需要更新的也作为条件添加到查询中可以提高效率</span><br>            <span class="hljs-string">&#x27;SELECT * FROM InterfaceExecLog WHERE InterfaceExecLogId = &#x27;&#x27;615108743A1A&#x27;&#x27;&#x27;</span>) <br><span class="hljs-keyword">SET</span> ReceiveData = <span class="hljs-string">&#x27;Test&#x27;</span><br><span class="hljs-keyword">WHERE</span> InterfaceExecLogId = <span class="hljs-string">&#x27;615108743A1A&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">INSERT</span> OPENROWSET(	<br>            <span class="hljs-string">&#x27;SQLNCLI&#x27;</span>, <br>            <span class="hljs-string">&#x27;server=192.168.3.12;uid=sa;pwd=sa;database=OrBitTest&#x27;</span>,  <br>            <span class="hljs-string">&#x27;SELECT * FROM InterfaceExecLog&#x27;</span>) <br><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> InterfaceExecLog <span class="hljs-keyword">WHERE</span> InterfaceExecLogId=<span class="hljs-string">&#x27;IFEL000003BB&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h3><p>无法删除</p>
+<h2 id="语句DELETE、TRUNCATE-、DROP删除表的区别"><a href="#语句DELETE、TRUNCATE-、DROP删除表的区别" class="headerlink" title="语句DELETE、TRUNCATE 、DROP删除表的区别"></a>语句DELETE、TRUNCATE 、DROP删除表的区别</h2><h3 id="DELETE-FROM-表名"><a href="#DELETE-FROM-表名" class="headerlink" title="DELETE FROM 表名"></a>DELETE FROM 表名</h3><ol>
+<li>只是删除表中某些数据，表结构还在。</li>
+<li>DELETE 可以带 WHERE 子句来删除一部分数据，例如 DELETE FROM Student WHERE Age &gt; 20</li>
+<li>自动编号不恢复到初始值。</li>
+</ol>
+<h3 id="TRUNCATE-TABLE-表名"><a href="#TRUNCATE-TABLE-表名" class="headerlink" title="TRUNCATE TABLE 表名"></a>TRUNCATE TABLE 表名</h3><ol>
+<li>TRUNCATE 语句不能跟 WHERE 条件，无法根据条件来删除，只能全部删除数据。</li>
+<li>自动编号恢复到初始值。</li>
+<li>使用 TRUNCATE 删除表中所有数据要比 DELETE 效率高的多，因为 TRUNCATE 操作采用按最小方式来记录日志。</li>
+<li>TRUNCATE 删除数据，不触发 DELETE 触发器。</li>
+</ol>
+<h3 id="DROP-TABLE-表名"><a href="#DROP-TABLE-表名" class="headerlink" title="DROP TABLE 表名"></a>DROP TABLE 表名</h3><ol>
+<li>删除表本身，即表中数据和表结构（列、约束、视图、键）全部删除。</li>
+</ol>
+<h1 id="SQL-Server-快速模板"><a href="#SQL-Server-快速模板" class="headerlink" title="SQL Server 快速模板"></a>SQL Server 快速模板</h1><p>记录某些固定代码的繁琐写法。</p>
+<h2 id="CURSOR-游标循环模板"><a href="#CURSOR-游标循环模板" class="headerlink" title="CURSOR 游标循环模板"></a>CURSOR 游标循环模板</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DECLARE</span> @<span class="hljs-keyword">Field</span> <span class="hljs-keyword">NVARCHAR</span>(<span class="hljs-number">50</span>) = <span class="hljs-string">&#x27;&#x27;</span><br><span class="hljs-keyword">DECLARE</span> Curs <span class="hljs-keyword">CURSOR</span> <span class="hljs-keyword">for</span><br><span class="hljs-comment">-- Select something</span><br><span class="hljs-keyword">OPEN</span> Curs<br><span class="hljs-keyword">FETCH</span> <span class="hljs-keyword">NEXT</span> <span class="hljs-keyword">FROM</span> Curs <span class="hljs-keyword">INTO</span> @<span class="hljs-keyword">Field</span><br><span class="hljs-keyword">WHILE</span> @@fetch_status=<span class="hljs-number">0</span><br><span class="hljs-keyword">BEGIN</span><br>    <span class="hljs-comment">-- Do something</span><br>    <span class="hljs-keyword">FETCH</span> <span class="hljs-keyword">NEXT</span> <span class="hljs-keyword">FROM</span> Curs <span class="hljs-keyword">INTO</span> @<span class="hljs-keyword">Field</span><br><span class="hljs-keyword">END</span><br><span class="hljs-keyword">CLOSE</span> Curs<br><span class="hljs-keyword">DEALLOCATE</span> Curs<br></code></pre></td></tr></table></figure>
+
+<h2 id="While-临时表循环"><a href="#While-临时表循环" class="headerlink" title="While 临时表循环"></a>While 临时表循环</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DECLARE</span> @RowCount <span class="hljs-built_in">INT</span> = <span class="hljs-number">0</span><br><span class="hljs-keyword">DECLARE</span> @SumCount <span class="hljs-built_in">INT</span> = <span class="hljs-number">0</span><br><span class="hljs-keyword">DECLARE</span> @<span class="hljs-keyword">Field</span> <span class="hljs-keyword">NVARCHAR</span>(<span class="hljs-number">50</span>) = <span class="hljs-string">&#x27;&#x27;</span><br><span class="hljs-keyword">DECLARE</span> @ItemTable <span class="hljs-keyword">TABLE</span>(<br>    <span class="hljs-keyword">ID</span> <span class="hljs-built_in">INT</span> <span class="hljs-keyword">IDENTITY</span>(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>),	    <span class="hljs-comment">-- ID</span><br>    <span class="hljs-keyword">Field</span> <span class="hljs-keyword">NVARCHAR</span>(<span class="hljs-number">50</span>) <span class="hljs-literal">NULL</span>	    <span class="hljs-comment">-- 字段名称</span><br>)<br><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> @ItemTable <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&#x27;001&#x27;</span>),(<span class="hljs-string">&#x27;002&#x27;</span>),(<span class="hljs-string">&#x27;003&#x27;</span>)<br><br><span class="hljs-comment">-- 以防变化重新归零</span><br><span class="hljs-keyword">SET</span> @SumCount = <span class="hljs-number">0</span><br><span class="hljs-keyword">SET</span> @RowCount = <span class="hljs-number">0</span><br><br><span class="hljs-comment">-- 总行数</span><br><span class="hljs-keyword">SELECT</span> @SumCount = <span class="hljs-keyword">COUNT</span>(<span class="hljs-keyword">ID</span>)<br><span class="hljs-keyword">FROM</span> @ItemTable<br><br><span class="hljs-keyword">WHILE</span> @RowCount &lt; @SumCount<br><span class="hljs-keyword">BEGIN</span><br>    <span class="hljs-comment">-- 循环控制变量</span><br>    <span class="hljs-keyword">SET</span> @RowCount = @RowCount + <span class="hljs-number">1</span><br><br>    <span class="hljs-keyword">SELECT</span> @<span class="hljs-keyword">Field</span> = <span class="hljs-keyword">Field</span><br>    <span class="hljs-keyword">FROM</span> @ItemTable<br>    <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">ID</span> = @RowCount<br><br>    <span class="hljs-keyword">SELECT</span> @<span class="hljs-keyword">Field</span><br><span class="hljs-keyword">END</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="img%5Cposts%5CSQLServer%5CWhile%E4%B8%B4%E6%97%B6%E8%A1%A8%E5%BE%AA%E7%8E%AF.jpg" srcset="/img/loading.gif"></p>
+<h2 id="XML-字符串转临时表"><a href="#XML-字符串转临时表" class="headerlink" title="XML 字符串转临时表"></a>XML 字符串转临时表</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DECLARE</span> @idoc <span class="hljs-built_in">INT</span><br><span class="hljs-keyword">DECLARE</span> @doc <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-keyword">MAX</span>)<br><span class="hljs-keyword">DECLARE</span> @ItemTable <span class="hljs-keyword">TABLE</span>(<br>    <span class="hljs-keyword">ID</span>          <span class="hljs-built_in">INT</span>         <span class="hljs-keyword">IDENTITY</span>(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>),	        <span class="hljs-comment">-- ID</span><br>    OrderID		<span class="hljs-built_in">INT</span>			<span class="hljs-literal">NULL</span>,<br>    CustomerID	<span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">10</span>)	<span class="hljs-literal">NULL</span>,<br>    ContactName	<span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">20</span>)	<span class="hljs-literal">NULL</span>,<br>    OrderDate	DATETIME	<span class="hljs-literal">NULL</span>,<br>    ProdID		<span class="hljs-built_in">INT</span>			<span class="hljs-literal">NULL</span>,<br>    Qty			<span class="hljs-built_in">INT</span>			<span class="hljs-literal">NULL</span><br>)<br><br><span class="hljs-keyword">SET</span> @doc = <span class="hljs-string">&#x27;</span><br><span class="hljs-string">&lt;ROOT&gt;</span><br><span class="hljs-string">    &lt;Customer CustomerID=&quot;VINET&quot; ContactName=&quot;Paul Henriot&quot;&gt;</span><br><span class="hljs-string">        &lt;Order OrderID=&quot;10248&quot; CustomerID=&quot;VINET&quot; EmployeeID=&quot;5&quot; OrderDate=&quot;1996-07-04T00:00:00&quot;&gt;</span><br><span class="hljs-string">            &lt;OrderDetail ProductID=&quot;111&quot; Quantity=&quot;12&quot;/&gt;</span><br><span class="hljs-string">            &lt;OrderDetail ProductID=&quot;42&quot; Quantity=&quot;10&quot;/&gt;</span><br><span class="hljs-string">        &lt;/Order&gt;</span><br><span class="hljs-string">    &lt;/Customer&gt;</span><br><span class="hljs-string">    &lt;Customer CustomerID=&quot;LILAS&quot; ContactName=&quot;Carlos Gonzlez&quot;&gt;</span><br><span class="hljs-string">        &lt;Order OrderID=&quot;10283&quot; CustomerID=&quot;LILAS&quot; EmployeeID=&quot;3&quot; OrderDate=&quot;1996-08-16T00:00:00&quot;&gt;</span><br><span class="hljs-string">            &lt;OrderDetail ProductID=&quot;72&quot; Quantity=&quot;3&quot;/&gt;</span><br><span class="hljs-string">        &lt;/Order&gt;</span><br><span class="hljs-string">    &lt;/Customer&gt;</span><br><span class="hljs-string">&lt;/ROOT&gt;&#x27;</span><br><br>EXEC sp_xml_preparedocument @idoc <span class="hljs-keyword">OUTPUT</span>, @doc<br><br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> @ItemTable<br><span class="hljs-keyword">SELECT</span> *<br><span class="hljs-keyword">FROM</span> OPENXML (@idoc, <span class="hljs-string">&#x27;/ROOT/Customer/Order/OrderDetail&#x27;</span>,<span class="hljs-number">2</span>)<br><span class="hljs-keyword">WITH</span> (<br>    OrderID		<span class="hljs-built_in">INT</span>			<span class="hljs-string">&#x27;../@OrderID&#x27;</span>,<br>    CustomerID	<span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">10</span>)	<span class="hljs-string">&#x27;../@CustomerID&#x27;</span>,<br>    ContactName	<span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">20</span>)	<span class="hljs-string">&#x27;../../@ContactName&#x27;</span>,<br>    OrderDate	DATETIME	<span class="hljs-string">&#x27;../@OrderDate&#x27;</span>,<br>    ProdID		<span class="hljs-built_in">INT</span>			<span class="hljs-string">&#x27;@ProductID&#x27;</span>,<br>    Qty			<span class="hljs-built_in">INT</span>			<span class="hljs-string">&#x27;@Quantity&#x27;</span><br>)<br><br>EXEC sp_xml_removedocument @idoc<br><br><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> @ItemTable<br></code></pre></td></tr></table></figure>
+
+<p><img src="img%5Cposts%5CSQLServer%5CXML%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E4%B8%B4%E6%97%B6%E8%A1%A8.jpg" srcset="/img/loading.gif"></p>
+<h1 id="SQL-Server-系统表查询"><a href="#SQL-Server-系统表查询" class="headerlink" title="SQL Server 系统表查询"></a>SQL Server 系统表查询</h1><h2 id="用户创建表"><a href="#用户创建表" class="headerlink" title="用户创建表"></a>用户创建表</h2><h3 id="查询存在某个字段名称的用户创建表"><a href="#查询存在某个字段名称的用户创建表" class="headerlink" title="查询存在某个字段名称的用户创建表"></a>查询存在某个字段名称的用户创建表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> object_name(<span class="hljs-keyword">id</span>) objName,<span class="hljs-keyword">Name</span> <span class="hljs-keyword">as</span> colName<br><span class="hljs-keyword">FROM</span> syscolumns<br><span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">name</span> = <span class="hljs-string">&#x27;字段名称&#x27;</span><br><span class="hljs-keyword">AND</span> <span class="hljs-keyword">id</span> <span class="hljs-keyword">in</span> (<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">id</span> <span class="hljs-keyword">FROM</span> sysobjects <span class="hljs-keyword">WHERE</span> xtype = <span class="hljs-string">&#x27;u&#x27;</span>)<br><span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> objname<br></code></pre></td></tr></table></figure>
+
+<p><img src="img%5Cposts%5CSQLServer%5C%E6%9F%A5%E8%AF%A2%E5%AD%98%E5%9C%A8%E6%9F%90%E4%B8%AA%E5%AD%97%E6%AE%B5%E5%90%8D%E7%A7%B0%E7%9A%84%E7%94%A8%E6%88%B7%E5%88%9B%E5%BB%BA%E8%A1%A8.jpg" srcset="/img/loading.gif"></p>
+<h3 id="查询用户创建表的表结构"><a href="#查询用户创建表的表结构" class="headerlink" title="查询用户创建表的表结构"></a>查询用户创建表的表结构</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DECLARE</span> @table_name <span class="hljs-keyword">AS</span> <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-keyword">MAX</span>)<br><span class="hljs-keyword">SET</span> @table_name = <span class="hljs-string">&#x27;表名称&#x27;</span> <br><span class="hljs-keyword">SELECT</span>	sys.columns.name <span class="hljs-keyword">AS</span> 字段名称,<br>        sys.types.name <span class="hljs-keyword">AS</span> 类型名称,<br>        sys.columns.max_length <span class="hljs-keyword">AS</span> 字段长度,<br>        <span class="hljs-keyword">iif</span>(sys.columns.is_nullable = <span class="hljs-number">1</span>,<span class="hljs-string">&#x27;是&#x27;</span>,<span class="hljs-string">&#x27;否&#x27;</span>) <span class="hljs-keyword">AS</span> 是否可空, <br>        <span class="hljs-keyword">iif</span>(<span class="hljs-keyword">isnull</span>((<span class="hljs-keyword">SELECT</span> column_name <span class="hljs-keyword">FROM</span> INFORMATION_SCHEMA.KEY_COLUMN_USAGE <span class="hljs-keyword">WHERE</span> column_name = sys.columns.name <span class="hljs-keyword">AND</span> TABLE_NAME = @table_name),<span class="hljs-string">&#x27;&#x27;</span>)&lt;&gt;<span class="hljs-string">&#x27;&#x27;</span>,<span class="hljs-string">&#x27;是&#x27;</span>,<span class="hljs-string">&#x27;否&#x27;</span>) <span class="hljs-keyword">AS</span> 是否主键,<br>        <span class="hljs-keyword">iif</span>((<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">count</span>(*) <span class="hljs-keyword">FROM</span> sys.identity_columns <span class="hljs-keyword">WHERE</span> sys.identity_columns.object_id = sys.columns.object_id <span class="hljs-keyword">AND</span> sys.columns.column_id = sys.identity_columns.column_id) = <span class="hljs-number">1</span>,<span class="hljs-string">&#x27;是&#x27;</span>,<span class="hljs-string">&#x27;否&#x27;</span>) <span class="hljs-keyword">AS</span> 是否自增,<br>        (<span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">value</span> <span class="hljs-keyword">FROM</span> sys.extended_properties <span class="hljs-keyword">WHERE</span> sys.extended_properties.major_id = sys.columns.object_id <span class="hljs-keyword">AND</span> sys.extended_properties.minor_id = sys.columns.column_id) <span class="hljs-keyword">AS</span> 字段描述<br><span class="hljs-keyword">FROM</span> sys.columns, sys.tables, sys.types<br><span class="hljs-keyword">WHERE</span> sys.columns.object_id = sys.tables.object_id <br><span class="hljs-keyword">AND</span> sys.columns.system_type_id = sys.types.system_type_id  <br><span class="hljs-keyword">AND</span> sys.tables.name = @table_name <br><span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> sys.columns.column_id<br></code></pre></td></tr></table></figure>
+
+<p><img src="img%5Cposts%5CSQLServer%5C%E6%9F%A5%E8%AF%A2%E7%94%A8%E6%88%B7%E5%88%9B%E5%BB%BA%E8%A1%A8%E7%9A%84%E8%A1%A8%E7%BB%93%E6%9E%84.jpg" srcset="/img/loading.gif"></p>
+<h2 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h2><h3 id="查询包含某字段的所有存储过程"><a href="#查询包含某字段的所有存储过程" class="headerlink" title="查询包含某字段的所有存储过程"></a>查询包含某字段的所有存储过程</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">name</span>, <span class="hljs-keyword">SUBSTRING</span>(<span class="hljs-built_in">text</span>, <span class="hljs-keyword">CHARINDEX</span>(<span class="hljs-string">&#x27;SET @Method = &#x27;&#x27;SubmitAndAudit&#x27;&#x27;&#x27;</span>, <span class="hljs-built_in">text</span>) - <span class="hljs-number">50</span>, <span class="hljs-number">100</span>)<br><span class="hljs-keyword">FROM</span> sysobjects, syscomments <br><span class="hljs-keyword">WHERE</span> sysobjects.id = syscomments.id <br><span class="hljs-keyword">AND</span> <span class="hljs-built_in">text</span> <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;%SET @Method = &#x27;&#x27;SubmitAndAudit&#x27;&#x27;%&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="img%5Cposts%5CSQLServer%5C%E6%9F%A5%E8%AF%A2%E5%8C%85%E5%90%AB%E6%9F%90%E5%AD%97%E6%AE%B5%E7%9A%84%E6%89%80%E6%9C%89%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B.jpg" srcset="/img/loading.gif"></p>
+<h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><p>通过 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-query-stats-transact-sql?view=sql-server-2017">sys.dm_exec_query_stats</a> 获取 SQL Server 中缓存查询计划的聚合性能统计信息。</p>
+<h3 id="查询某个时间段内的脚本语句详情"><a href="#查询某个时间段内的脚本语句详情" class="headerlink" title="查询某个时间段内的脚本语句详情"></a>查询某个时间段内的脚本语句详情</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span>  TOP <span class="hljs-number">1000</span> <br>        ST.text <span class="hljs-keyword">AS</span> <span class="hljs-string">&#x27;执行的SQL语句&#x27;</span>,<br>        QS.execution_count <span class="hljs-keyword">AS</span> <span class="hljs-string">&#x27;执行次数&#x27;</span>,<br>        QS.total_elapsed_time <span class="hljs-keyword">AS</span> <span class="hljs-string">&#x27;耗时&#x27;</span>,<br>        QS.total_logical_reads <span class="hljs-keyword">AS</span> <span class="hljs-string">&#x27;逻辑读取次数&#x27;</span>,<br>        QS.total_logical_writes <span class="hljs-keyword">AS</span> <span class="hljs-string">&#x27;逻辑写入次数&#x27;</span>,<br>        QS.total_physical_reads <span class="hljs-keyword">AS</span> <span class="hljs-string">&#x27;物理读取次数&#x27;</span>,<br>        QS.creation_time <span class="hljs-keyword">AS</span> <span class="hljs-string">&#x27;执行时间&#x27;</span><br><span class="hljs-keyword">FROM</span>    sys.dm_exec_query_stats QS<br>        <span class="hljs-keyword">CROSS</span> <span class="hljs-keyword">APPLY</span> sys.dm_exec_sql_text(QS.sql_handle) ST<br><span class="hljs-keyword">WHERE</span> QS.creation_time <span class="hljs-keyword">BETWEEN</span> <span class="hljs-string">&#x27;2021-12-22 00:00:00&#x27;</span> <span class="hljs-keyword">AND</span> <span class="hljs-string">&#x27;2021-12-22 23:59:59&#x27;</span> <br><span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> QS.total_elapsed_time <span class="hljs-keyword">DESC</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="img%5Cposts%5CSQLServer%5C%E6%9F%A5%E8%AF%A2%E6%9F%90%E4%B8%AA%E6%97%B6%E9%97%B4%E6%AE%B5%E5%86%85%E7%9A%84%E8%84%9A%E6%9C%AC%E8%AF%AD%E5%8F%A5%E8%AF%A6%E6%83%85.jpg" srcset="/img/loading.gif"></p>
+<blockquote>
+<p>查询不到内容<a target="_blank" rel="noopener" href="https://www.cnblogs.com/simpleworldz/p/15257368.html">原因</a></p>
+</blockquote>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/SQL-Server/">SQL Server</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/981222005.html">
+                        <span class="hidden-mobile">Spring Cloud Alibaba操作手册</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
